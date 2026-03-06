@@ -5,8 +5,6 @@ let indice = 0;
 let acertos = 0;
 let erros = 0;
 
-/* ================= BANCO DE QUESTÕES ================= */
-
 const bancoQuestoes = {
   /* ================= LÍNGUA PORTUGUESA ================= */
   portugues: {},
