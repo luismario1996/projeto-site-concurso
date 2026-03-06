@@ -1,27 +1,37 @@
 {
-  "Compreensão e interpretação de textos": [
+  "Compreensão de textos": [
     {
-      "pergunta": "Qual é o objetivo da interpretação de texto?",
+      "pergunta": "Qual a função do sujeito?",
       "alternativas": {
-        "A": "Memorizar palavras",
-        "B": "Entender o sentido do texto",
-        "C": "Decorá-lo",
-        "D": "Contar letras",
-        "E": "Nenhuma"
+        "A": "Indicar tempo",
+        "B": "Indicar ação",
+        "C": "Indicar quem pratica a ação",
+        "D": "Indicar lugar",
+        "E": "Indicar objeto"
       },
-      "correta": "B"
+      "correta": "C"
+    },
+    {
+      "pergunta": "O que é predicado?",
+      "alternativas": {
+        "A": "Parte que indica ação",
+        "B": "Parte que indica sujeito",
+        "C": "Nome do sujeito",
+        "D": "Advérbio",
+        "E": "Objeto direto"
+      },
+      "correta": "A"
     }
   ],
-
-  "Ortografia oficial": [
+  "Ortografia": [
     {
-      "pergunta": "Qual palavra está correta?",
+      "pergunta": "Como se escreve corretamente?",
       "alternativas": {
         "A": "Excessão",
         "B": "Exceção",
-        "C": "Exessão",
-        "D": "Exceçãum",
-        "E": "Exceçaum"
+        "C": "Exseção",
+        "D": "Exceçãon",
+        "E": "Exceçã"
       },
       "correta": "B"
     }

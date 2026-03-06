@@ -1,116 +1,212 @@
-
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-font-family: 'Segoe UI', Tahoma, sans-serif;
-background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-min-height:100vh;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+body {
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  /* imagens laterais */
+  background-image: url(./img/esquerda.png), url(./img/esquerda.png);
+
+  background-position:
+    left center,
+    right center;
+
+  background-repeat: no-repeat, no-repeat;
+
+  background-size:
+    350px auto,
+    350px auto;
 }
 
-.container{
-width:100%;
-max-width:950px;
-background:rgba(255,255,255,0.05);
-backdrop-filter: blur(12px);
-border-radius:18px;
-padding:40px;
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
-animation:fade 0.5s ease;
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #1f1f1f;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(10px);}
-to{opacity:1;transform:translateY(0);}
+/* Títulos */
+h1,
+h2 {
+  color: #e50914;
+  margin-bottom: 20px;
 }
 
-h1{
-text-align:center;
-font-size:34px;
-margin-bottom:20px;
-font-weight:600;
-letter-spacing:1px;
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s;
 }
 
-h2{
-text-align:center;
-margin-bottom:20px;
-font-weight:500;
+input:focus {
+  background-color: #3a3a3a;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
 }
 
-input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:none;
-margin-bottom:15px;
-font-size:16px;
-background:#f1f1f1;
+/* Botões gerais */
+button {
+  padding: 14px 28px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e50914;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-button{
-width:100%;
-padding:14px;
-margin:6px 0;
-border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:600;
-cursor:pointer;
-background:linear-gradient(135deg,#4e73df,#224abe);
-color:white;
-transition:all 0.25s ease;
+button:hover {
+  background-color: #b00610;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.5);
 }
 
-button:hover{
-transform:scale(1.03);
-box-shadow:0 8px 18px rgba(0,0,0,0.4);
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
 }
 
-.correct{
-background:linear-gradient(135deg,#00c853,#2e7d32)!important;
+/* Botão Voltar */
+button.voltar {
+  background-color: #757575;
 }
 
-.wrong{
-background:linear-gradient(135deg,#ff5252,#b71c1c)!important;
+button.voltar:hover {
+  background-color: #616161;
 }
 
-.hidden{
-display:none;
+/* Cards de matérias e subtemas */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-#alternativas button{
-text-align:left;
-padding-left:18px;
+.card {
+  background-color: #2a2a2a;
+  width: 200px;
+  height: 120px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  position: relative;
+  text-align: center;
+  padding: 10px;
 }
 
-#pergunta{
-font-size:20px;
-margin-bottom:20px;
-background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:12px;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.6);
 }
 
-#placar{
-font-size:20px;
-text-align:center;
-margin:20px 0;
+.card.already-done::after {
+  content: "✔";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #00c851;
+  font-size: 1.2rem;
 }
 
-canvas{
-margin-top:20px;
-background:white;
-border-radius:10px;
-padding:10px;
+/* Alternativas de quiz */
+#alternativas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
+#alternativas button {
+  width: 90%;
+  margin: 6px 0;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Status da questão */
+#statusQuestao {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #e50914;
+}
+
+/* Correto / errado */
+.correct {
+  background: #43a047 !important;
+  color: #fff;
+}
+.wrong {
+  background: #e53935 !important;
+  color: #fff;
+}
+
+/* Ocultar elementos */
+.hidden {
+  display: none;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .card {
+    width: 45%;
+    height: 100px;
+  }
+}
+
+/* Animação fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
