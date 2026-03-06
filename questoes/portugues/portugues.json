@@ -1,0 +1,29 @@
+{
+  "Compreensão e interpretação de textos": [
+    {
+      "pergunta": "Qual é o objetivo da interpretação de texto?",
+      "alternativas": {
+        "A": "Memorizar palavras",
+        "B": "Entender o sentido do texto",
+        "C": "Decorá-lo",
+        "D": "Contar letras",
+        "E": "Nenhuma"
+      },
+      "correta": "B"
+    }
+  ],
+
+  "Ortografia oficial": [
+    {
+      "pergunta": "Qual palavra está correta?",
+      "alternativas": {
+        "A": "Excessão",
+        "B": "Exceção",
+        "C": "Exessão",
+        "D": "Exceçãum",
+        "E": "Exceçaum"
+      },
+      "correta": "B"
+    }
+  ]
+}
