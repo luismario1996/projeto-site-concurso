@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulador Guarda Municipal - Manaus</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="container" id="login">
+<h1>Simulador Guarda Municipal - Manaus</h1>
+<input type="text" id="nome" placeholder="Digite seu nome">
+<button onclick="entrar()">Entrar</button>
+</div>
+
+<!-- MENU -->
+<div class="container hidden" id="menu">
+<h2 id="bemvindo"></h2>
+<h2>Escolha a Matéria</h2>
+
+<button onclick="abrirSubtemas('portugues')">Língua Portuguesa</button>
+<button onclick="abrirSubtemas('informatica')">Noções de Informática</button>
+<button onclick="abrirSubtemas('geografia')">Geografia e História de Manaus</button>
+<button onclick="abrirSubtemas('direitoshumanos')">Direitos Humanos</button>
+<button onclick="abrirSubtemas('direitoadministrativo')">Direito Administrativo </button>
+<button onclick="abrirSubtemas('direitoconstitucional')">Direito Constitucional </button>
+<button onclick="abrirSubtemas('direitopenal')">Direito Penal</button>
+
+<button onclick="abrirSubtemas('processualpenal')">Direito Processual Penal:</button>
+<button onclick="abrirSubtemas('legislacao')">Legislação
+</button>
+
+
+</div>
+
+<!-- SUBTEMAS -->
+<div class="container hidden" id="subtemas">
+<h2 id="tituloSubtema"></h2>
+<div id="listaSubtemas"></div>
+<button onclick="voltarMenu()">Voltar</button>
+</div>
+
+<!-- QUIZ -->
+<div class="container hidden" id="quiz">
+<h2 id="tituloQuiz"></h2>
+<div id="pergunta"></div>
+<div id="alternativas"></div>
+<button onclick="proxima()" id="btnProxima" class="hidden">Próxima</button>
+</div>
+
+<!-- RESULTADO -->
+<div class="container hidden" id="resultado">
+<h2>Resultado Final</h2>
+<p id="placar"></p>
+<canvas id="grafico"></canvas>
+<button onclick="voltarMenu()">Voltar ao Menu</button>
+</div>
+
+<scrip src="script.js"></script>
+
+</body>
+</html>
