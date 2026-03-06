@@ -1,431 +1,400 @@
-
-
-
-let usuario="";
-let materiaAtual="";
-let subtemaAtual="";
-let indice=0;
-let acertos=0;
-let erros=0;
+let usuario = "";
+let materiaAtual = "";
+let subtemaAtual = "";
+let indice = 0;
+let acertos = 0;
+let erros = 0;
 
 /* ================= BANCO DE QUESTÕES ================= */
 
 const bancoQuestoes = {
+  /* ================= LÍNGUA PORTUGUESA ================= */
+  portugues: {
+    "Compreensão e interpretação de textos": [],
+    "Tipologia textual": [],
+    "Ortografia oficial": [],
+    "Acentuação gráfica": [],
+    "Emprego das classes de palavras": [],
+    "Emprego do sinal indicativo de crase": [],
+    "Sintaxe da oração e do período": [],
+    Pontuação: [],
+    "Concordância nominal e verbal": [],
+    "Regência nominal e verbal": [],
+    "Significação das palavras": [],
+    "Redação oficial": [],
+  },
 
-/* ================= LÍNGUA PORTUGUESA ================= */
-portugues:{
-"Compreensão e interpretação de textos":[],
-"Tipologia textual":[],
-"Ortografia oficial":[],
-"Acentuação gráfica":[],
-"Emprego das classes de palavras":[],
-"Emprego do sinal indicativo de crase":[],
-"Sintaxe da oração e do período":[],
-"Pontuação":[],
-"Concordância nominal e verbal":[],
-"Regência nominal e verbal":[],
-"Significação das palavras":[],
-"Redação oficial":[]
-},
+  /* ================= INFORMÁTICA ================= */
+  informatica: {
+    "Noções de sistema operacional (Windows)": [],
+    "Edição de textos (Microsoft Office 365)": [],
+    "Redes de computadores": [],
+    "Internet e intranet": [],
+    "Navegadores (IE, Firefox, Chrome)": [],
+    "Correio eletrônico (Outlook e Thunderbird)": [],
+    "Sítios de busca": [],
+    "Grupos de discussão": [],
+    "Redes sociais": [],
+    "Computação na nuvem": [],
+    "Organização de arquivos": [],
+    "Segurança da informação": [],
+    "Procedimentos de segurança": [],
+    "Vírus e pragas virtuais": [],
+    "Antivírus e firewall": [],
+    Backup: [],
+    "Armazenamento na nuvem": [],
+  },
 
-/* ================= INFORMÁTICA ================= */
-informatica:{
-"Noções de sistema operacional (Windows)":[],
-"Edição de textos (Microsoft Office 365)":[],
-"Redes de computadores":[],
-"Internet e intranet":[],
-"Navegadores (IE, Firefox, Chrome)":[],
-"Correio eletrônico (Outlook e Thunderbird)":[],
-"Sítios de busca":[],
-"Grupos de discussão":[],
-"Redes sociais":[],
-"Computação na nuvem":[],
-"Organização de arquivos":[],
-"Segurança da informação":[],
-"Procedimentos de segurança":[],
-"Vírus e pragas virtuais":[],
-"Antivírus e firewall":[],
-"Backup":[],
-"Armazenamento na nuvem":[]
-},
+  /* ================= GEOGRAFIA E HISTÓRIA ================= */
+  geografia: {
+    "Localização e limites": [],
+    Hidrografia: [],
+    População: [],
+    "Aspectos políticos, administrativos, econômicos e culturais": [],
+    "Pontos turísticos": [],
+    "Patrimônio cultural": [],
+    "Clima e vegetação": [],
+    "Ocupação geográfica": [],
+    "História da cidade": [],
+  },
 
-/* ================= GEOGRAFIA E HISTÓRIA ================= */
-geografia:{
-"Localização e limites":[],
-"Hidrografia":[],
-"População":[],
-"Aspectos políticos, administrativos, econômicos e culturais":[],
-"Pontos turísticos":[],
-"Patrimônio cultural":[],
-"Clima e vegetação":[],
-"Ocupação geográfica":[],
-"História da cidade":[]
-},
+  /* ================= DIREITOS HUMANOS ================= */
 
-/* ================= DIREITOS HUMANOS ================= */
+  direitoshumanos: {
+    "Teoria geral dos direitos humanos": [],
 
-direitoshumanos:{
+    "Conceitos, terminologia, estrutura normativa e fundamentação": [],
 
-"Teoria geral dos direitos humanos":[],
+    "Afirmação histórica dos direitos humanos": [],
 
-"Conceitos, terminologia, estrutura normativa e fundamentação":[],
+    "Direitos humanos e responsabilidade do Estado": [],
 
-"Afirmação histórica dos direitos humanos":[],
+    "Tratados Internacionais de Proteção aos Direitos Humanos": [],
 
-"Direitos humanos e responsabilidade do Estado":[],
+    "Declaração Universal dos Direitos Humanos (1948)": [],
 
-"Tratados Internacionais de Proteção aos Direitos Humanos":[
-],
+    "Convenção Americana sobre Direitos Humanos - Pacto de São José da Costa Rica (Decreto 678/1992 art 1 ao 32)":
+      [],
 
-"Declaração Universal dos Direitos Humanos (1948)":[],
+    "Declaração de Pequim – Igualdade, Desenvolvimento e Paz": [],
 
-"Convenção Americana sobre Direitos Humanos - Pacto de São José da Costa Rica (Decreto 678/1992 art 1 ao 32)":[],
+    "Convenção para Prevenção e Repressão do Crime de Genocídio": [],
+  },
 
-"Declaração de Pequim – Igualdade, Desenvolvimento e Paz":[],
+  /* ================= DIREITO ADMINISTRATIVO ================= */
 
-"Convenção para Prevenção e Repressão do Crime de Genocídio":[]
+  direitoadministrativo: {
+    "Estado, governo e Administração Pública": [],
 
-},
+    "Conceito, fontes e princípios do Direito Administrativo": [],
 
+    "Organização administrativa: centralização, descentralização, concentração e desconcentração":
+      [],
 
-/* ================= DIREITO ADMINISTRATIVO ================= */
+    "Administração direta e indireta": [],
 
-direitoadministrativo:{
+    "Agentes públicos: espécies e classificação": [],
 
-"Estado, governo e Administração Pública":[],
+    "Poderes, deveres e prerrogativas dos agentes públicos": [],
 
-"Conceito, fontes e princípios do Direito Administrativo":[],
+    "Cargo, emprego e função pública": [],
 
-"Organização administrativa: centralização, descentralização, concentração e desconcentração":[],
+    "Regime jurídico dos servidores": [],
 
-"Administração direta e indireta":[],
+    "Provimento e vacância": [],
 
-"Agentes públicos: espécies e classificação":[],
+    "Remoção, redistribuição e substituição": [],
 
-"Poderes, deveres e prerrogativas dos agentes públicos":[],
+    "Direitos e vantagens dos servidores": [],
 
-"Cargo, emprego e função pública":[],
+    "Regime disciplinar": [],
 
-"Regime jurídico dos servidores":[],
+    "Responsabilidade civil, criminal e administrativa": [],
 
-"Provimento e vacância":[],
+    "Processo Administrativo": [],
 
-"Remoção, redistribuição e substituição":[],
+    "Processo Administrativo Disciplinar (PAD)": [],
 
-"Direitos e vantagens dos servidores":[],
+    Sindicância: [],
 
-"Regime disciplinar":[],
+    "Bens públicos": [],
 
-"Responsabilidade civil, criminal e administrativa":[],
+    "Improbidade administrativa (Lei 8.429/92)": [],
 
-"Processo Administrativo":[],
+    "Lei de Acesso à Informação (Lei 12.527/2011)": [],
 
-"Processo Administrativo Disciplinar (PAD)":[],
+    "Lei Geral de Proteção de Dados (Lei 13.709/2018)": [],
+  },
 
-"Sindicância":[],
+  /* ================= DIREITO CONSTITUCIONAL ================= */
 
-"Bens públicos":[],
+  /* ================= DIREITO CONSTITUCIONAL ================= */
 
-"Improbidade administrativa (Lei 8.429/92)":[],
+  direitoconstitucional: {
+    "Princípios Fundamentais (Art. 1º ao 4º da Constituição Federal de 1988)":
+      [],
 
-"Lei de Acesso à Informação (Lei 12.527/2011)":[],
+    "Direitos e deveres fundamentais": [],
 
-"Lei Geral de Proteção de Dados (Lei 13.709/2018)":[]
+    "Direitos e deveres individuais e coletivos": [],
 
-},
+    "Direito à vida, liberdade, igualdade, segurança e propriedade": [],
 
-/* ================= DIREITO CONSTITUCIONAL ================= */
+    "Direitos sociais": [],
 
-/* ================= DIREITO CONSTITUCIONAL ================= */
+    Nacionalidade: [],
 
-direitoconstitucional:{
+    "Cidadania e direitos políticos": [],
 
-"Princípios Fundamentais (Art. 1º ao 4º da Constituição Federal de 1988)":[],
+    "Partidos políticos": [],
 
+    "Garantias constitucionais individuais": [],
 
-"Direitos e deveres fundamentais":[
-],
+    "Garantias dos direitos coletivos, sociais e políticos": [],
 
-"Direitos e deveres individuais e coletivos":[
-],
+    "Defesa do Estado e das instituições democráticas": [],
 
-"Direito à vida, liberdade, igualdade, segurança e propriedade":[
-],
+    "Segurança pública": [],
 
-"Direitos sociais":[
-],
+    "Organização da segurança pública": [],
 
-"Nacionalidade":[
-],
+    "Ordem social": [],
 
-"Cidadania e direitos políticos":[
-],
+    "Base e objetivos da ordem social": [],
 
-"Partidos políticos":[
-],
+    "Seguridade social": [],
 
-"Garantias constitucionais individuais":[
-],
+    "Educação, cultura e desporto": [],
 
-"Garantias dos direitos coletivos, sociais e políticos":[
-],
+    "Ciência e tecnologia": [],
 
-"Defesa do Estado e das instituições democráticas":[
-],
+    "Comunicação social": [],
 
-"Segurança pública":[
-],
+    "Meio ambiente": [],
 
-"Organização da segurança pública":[
-],
+    "Família, criança, adolescente e idoso": [],
 
-"Ordem social":[
-],
+    "Direitos Humanos e acesso à justiça": [],
 
-"Base e objetivos da ordem social":[
-],
+    "Dever do Estado de promover o acesso à justiça": [],
+  },
+  /* ================= DIREITO PENAL ================= */
 
-"Seguridade social":[
-],
+  direitopenal: {
+    "Crimes contra a pessoa": [],
 
-"Educação, cultura e desporto":[
-],
+    "Crimes contra a pessoa": [],
 
-"Ciência e tecnologia":[
-],
+    "Lesão corporal": [],
 
-"Comunicação social":[
-],
+    "Periclitação da vida e da saúde": [],
 
-"Meio ambiente":[
-],
+    "Inviolabilidade dos segredos": [],
 
-"Família, criança, adolescente e idoso":[
-],
+    "Crimes contra o patrimônio": [],
 
-"Direitos Humanos e acesso à justiça":[
-],
+    "Crimes contra a Administração Pública (art 312 ao 359 do Código Penal)":
+      [],
 
-"Dever do Estado de promover o acesso à justiça":[
-]
+    "Abuso de autoridade (Lei 13.869/2019)": [],
 
-}
-,
+    "Estatuto do Desarmamento (Lei 10.826/03)": [],
 
-/* ================= DIREITO PENAL ================= */
+    "Crimes hediondos (Lei 8.072/90)": [],
 
-direitopenal:{
+    "Lei de tortura (Lei 9.455/97)": [],
 
-"Crimes contra a pessoa":[],
+    "Lei de drogas (Lei 11.343/06)": [],
 
-"Crimes contra a pessoa":[],
+    "Preconceito de raça ou cor (Lei 7.716/89)": [],
 
+    "Estatuto do Idoso - crimes (Lei 10.741/03)": [],
 
-"Lesão corporal":[],
+    "Lei Maria da Penha (Lei 11.340/06)": [],
 
-"Periclitação da vida e da saúde":[],
+    "Crimes no Estatuto da Criança e do Adolescente": [],
 
-"Inviolabilidade dos segredos":[],
+    "Aplicação da Lei Penal e Teoria do Crime (art 13 ao 25)": [],
+  },
 
-"Crimes contra o patrimônio":[],
+  /* ================= DIREITO PROCESSUAL PENAL ================= */
 
-"Crimes contra a Administração Pública (art 312 ao 359 do Código Penal)":[],
+  processualpenal: {
+    "Inquérito policial": [],
 
-"Abuso de autoridade (Lei 13.869/2019)":[],
+    "Termo Circunstanciado de Ocorrência (TCO)": [],
 
-"Estatuto do Desarmamento (Lei 10.826/03)":[],
+    "Prova e local de crime": [],
 
-"Crimes hediondos (Lei 8.072/90)":[],
+    Prisões: [],
 
-"Lei de tortura (Lei 9.455/97)":[],
+    "Prisão em flagrante": [],
 
-"Lei de drogas (Lei 11.343/06)":[],
+    "Prisão preventiva": [],
 
-"Preconceito de raça ou cor (Lei 7.716/89)":[],
+    "Prisão temporária": [],
+  },
 
-"Estatuto do Idoso - crimes (Lei 10.741/03)":[],
+  /* ================= LEGISLAÇÃO ================= */
 
-"Lei Maria da Penha (Lei 11.340/06)":[],
+  legislacao: {
+    "Estatuto dos Servidores Públicos de Manaus (Lei 1.118/1971)": [],
 
-"Crimes no Estatuto da Criança e do Adolescente":[],
+    "Estatuto Geral das Guardas Municipais (Lei 13.022/2014)": [],
 
-"Aplicação da Lei Penal e Teoria do Crime (art 13 ao 25)":[]
+    "Estatuto da Guarda Municipal de Manaus (Lei Complementar 16/2021)": [],
 
-},
+    "Sistema Único de Segurança Pública (Lei 13.675/2018)": [],
 
+    "Decreto 9.489/2018 regulamentação SUSP": [],
 
-/* ================= DIREITO PROCESSUAL PENAL ================= */
+    "Estatuto do Desarmamento (Lei 10.826/2003)": [],
 
-processualpenal:{
+    "Estatuto da Criança e do Adolescente (Lei 8.069/1990)": [],
 
-"Inquérito policial":[],
+    "Lei de Abuso de Autoridade (Lei 13.869/2019)": [],
 
-"Termo Circunstanciado de Ocorrência (TCO)":[],
+    "Lei de Crimes de Responsabilidade (Lei 1.079/1950)": [],
 
-"Prova e local de crime":[],
+    "Lei de Drogas (Lei 11.343/2006)": [],
 
-"Prisões":[],
+    "Lei de Improbidade Administrativa (Lei 8.429/1992)": [],
 
-"Prisão em flagrante":[],
+    "Estatuto do Idoso (Lei 10.741/2003)": [],
 
-"Prisão preventiva":[],
+    "Lei Maria da Penha (Lei 11.340/2006)": [],
 
-"Prisão temporária":[]
+    "Lei de Racismo (Lei 7.716/1989)": [],
 
-},
-
-
-/* ================= LEGISLAÇÃO ================= */
-
-legislacao:{
-
-"Estatuto dos Servidores Públicos de Manaus (Lei 1.118/1971)":[],
-
-"Estatuto Geral das Guardas Municipais (Lei 13.022/2014)":[],
-
-"Estatuto da Guarda Municipal de Manaus (Lei Complementar 16/2021)":[],
-
-"Sistema Único de Segurança Pública (Lei 13.675/2018)":[],
-
-"Decreto 9.489/2018 regulamentação SUSP":[],
-
-"Estatuto do Desarmamento (Lei 10.826/2003)":[],
-
-"Estatuto da Criança e do Adolescente (Lei 8.069/1990)":[],
-
-"Lei de Abuso de Autoridade (Lei 13.869/2019)":[],
-
-"Lei de Crimes de Responsabilidade (Lei 1.079/1950)":[],
-
-"Lei de Drogas (Lei 11.343/2006)":[],
-
-"Lei de Improbidade Administrativa (Lei 8.429/1992)":[],
-
-"Estatuto do Idoso (Lei 10.741/2003)":[],
-
-"Lei Maria da Penha (Lei 11.340/2006)":[],
-
-"Lei de Racismo (Lei 7.716/1989)":[],
-
-"Estatuto da Igualdade Racial (Lei 12.288/2010)":[]
-
-}
-
-
+    "Estatuto da Igualdade Racial (Lei 12.288/2010)": [],
+  },
 };
 
 /* ================= SISTEMA ================= */
 
-function entrar(){
-usuario=document.getElementById("nome").value;
-if(usuario==="") return alert("Digite seu nome");
-document.getElementById("login").classList.add("hidden");
-document.getElementById("menu").classList.remove("hidden");
-document.getElementById("bemvindo").innerText="Bem-vindo, "+usuario;
+function entrar() {
+  usuario = document.getElementById("nome").value;
+  if (usuario === "") return alert("Digite seu nome");
+  document.getElementById("login").classList.add("hidden");
+  document.getElementById("menu").classList.remove("hidden");
+  document.getElementById("bemvindo").innerText = "Bem-vindo, " + usuario;
 }
 
-function abrirSubtemas(materia){
-materiaAtual=materia;
-document.getElementById("menu").classList.add("hidden");
-document.getElementById("subtemas").classList.remove("hidden");
+async function abrirSubtemas(materia) {
+  await carregarQuestoesJSON(materia);
+  materiaAtual = materia;
+  document.getElementById("menu").classList.add("hidden");
+  document.getElementById("subtemas").classList.remove("hidden");
 
-let lista=document.getElementById("listaSubtemas");
-lista.innerHTML="";
+  let lista = document.getElementById("listaSubtemas");
+  lista.innerHTML = "";
 
-let titulo="";
-if(materia==="portugues") titulo="Língua Portuguesa";
-if(materia==="informatica") titulo="Noções de Informática";
-if(materia==="geografia") titulo="Geografia e História de Manaus";
-if(materia==="direito") titulo="Noções de Direito";
+  let titulo = "";
+  if (materia === "portugues") titulo = "Língua Portuguesa";
+  if (materia === "informatica") titulo = "Noções de Informática";
+  if (materia === "geografia") titulo = "Geografia e História de Manaus";
+  if (materia === "direito") titulo = "Noções de Direito";
 
-document.getElementById("tituloSubtema").innerText=titulo;
+  document.getElementById("tituloSubtema").innerText = titulo;
 
-for(let sub in bancoQuestoes[materia]){
-let btn=document.createElement("button");
-btn.innerText=sub;
-btn.onclick=()=>iniciarQuiz(sub);
-lista.appendChild(btn);
-}
-}
-
-function iniciarQuiz(sub){
-if(bancoQuestoes[materiaAtual][sub].length===0){
-alert("Ainda não há questões cadastradas neste subtema.");
-return;
-}
-subtemaAtual=sub;
-indice=0;
-acertos=0;
-erros=0;
-
-document.getElementById("subtemas").classList.add("hidden");
-document.getElementById("quiz").classList.remove("hidden");
-document.getElementById("tituloQuiz").innerText=sub;
-mostrarPergunta();
+  for (let sub in bancoQuestoes[materia]) {
+    let btn = document.createElement("button");
+    btn.innerText = sub;
+    btn.onclick = () => iniciarQuiz(sub);
+    lista.appendChild(btn);
+  }
 }
 
-function mostrarPergunta(){
-let questao=bancoQuestoes[materiaAtual][subtemaAtual][indice];
-document.getElementById("pergunta").innerText=questao.pergunta;
-let divAlt=document.getElementById("alternativas");
-divAlt.innerHTML="";
+function iniciarQuiz(sub) {
+  if (bancoQuestoes[materiaAtual][sub].length === 0) {
+    alert("Ainda não há questões cadastradas neste subtema.");
+    return;
+  }
+  subtemaAtual = sub;
+  indice = 0;
+  acertos = 0;
+  erros = 0;
 
-for(let letra of ["A","B","C","D","E"]){
-let btn=document.createElement("button");
-btn.innerText=letra+") "+questao.alternativas[letra];
-btn.onclick=()=>verificar(btn,letra);
-divAlt.appendChild(btn);
-}
-}
-
-function verificar(botao,escolha){
-let correta=bancoQuestoes[materiaAtual][subtemaAtual][indice].correta;
-let botoes=document.querySelectorAll("#alternativas button");
-botoes.forEach(b=>b.disabled=true);
-
-if(escolha===correta){
-botao.classList.add("correct");
-acertos++;
-}else{
-botao.classList.add("wrong");
-botoes.forEach(b=>{
-if(b.innerText.startsWith(correta)) b.classList.add("correct");
-});
-erros++;
+  document.getElementById("subtemas").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  document.getElementById("tituloQuiz").innerText = sub;
+  mostrarPergunta();
 }
 
-document.getElementById("btnProxima").classList.remove("hidden");
+function mostrarPergunta() {
+  let questao = bancoQuestoes[materiaAtual][subtemaAtual][indice];
+  document.getElementById("pergunta").innerText = questao.pergunta;
+  let divAlt = document.getElementById("alternativas");
+  divAlt.innerHTML = "";
+
+  for (let letra of ["A", "B", "C", "D", "E"]) {
+    let btn = document.createElement("button");
+    btn.innerText = letra + ") " + questao.alternativas[letra];
+    btn.onclick = () => verificar(btn, letra);
+    divAlt.appendChild(btn);
+  }
 }
 
-function proxima(){
-indice++;
-document.getElementById("btnProxima").classList.add("hidden");
-if(indice<bancoQuestoes[materiaAtual][subtemaAtual].length){
-mostrarPergunta();
-}else{
-finalizar();
-}
+function verificar(botao, escolha) {
+  let correta = bancoQuestoes[materiaAtual][subtemaAtual][indice].correta;
+  let botoes = document.querySelectorAll("#alternativas button");
+  botoes.forEach((b) => (b.disabled = true));
+
+  if (escolha === correta) {
+    botao.classList.add("correct");
+    acertos++;
+  } else {
+    botao.classList.add("wrong");
+    botoes.forEach((b) => {
+      if (b.innerText.startsWith(correta)) b.classList.add("correct");
+    });
+    erros++;
+  }
+
+  document.getElementById("btnProxima").classList.remove("hidden");
 }
 
-function finalizar(){
-document.getElementById("quiz").classList.add("hidden");
-document.getElementById("resultado").classList.remove("hidden");
-document.getElementById("placar").innerText=
-"Acertos: "+acertos+" | Erros: "+erros;
-
-new Chart(document.getElementById("grafico"),{
-type:"pie",
-data:{
-labels:["Acertos","Erros"],
-datasets:[{data:[acertos,erros]}]
-}
-});
+function proxima() {
+  indice++;
+  document.getElementById("btnProxima").classList.add("hidden");
+  if (indice < bancoQuestoes[materiaAtual][subtemaAtual].length) {
+    mostrarPergunta();
+  } else {
+    finalizar();
+  }
 }
 
-function voltarMenu(){
-document.getElementById("resultado").classList.add("hidden");
-document.getElementById("quiz").classList.add("hidden");
-document.getElementById("subtemas").classList.add("hidden");
-document.getElementById("menu").classList.remove("hidden");
+function finalizar() {
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("resultado").classList.remove("hidden");
+  document.getElementById("placar").innerText =
+    "Acertos: " + acertos + " | Erros: " + erros;
+
+  new Chart(document.getElementById("grafico"), {
+    type: "pie",
+    data: {
+      labels: ["Acertos", "Erros"],
+      datasets: [{ data: [acertos, erros] }],
+    },
+  });
 }
 
+function voltarMenu() {
+  document.getElementById("resultado").classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("subtemas").classList.add("hidden");
+  document.getElementById("menu").classList.remove("hidden");
+}
+
+async function carregarQuestoesJSON(materia) {
+  try {
+    const resposta = await fetch("questoes/" + materia + ".json");
+    const dados = await resposta.json();
+
+    bancoQuestoes[materia] = dados;
+
+    console.log("Questões carregadas:", bancoQuestoes[materia]);
+  } catch (erro) {
+    console.error("Erro ao carregar JSON:", erro);
+  }
+}
