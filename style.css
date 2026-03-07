@@ -30,6 +30,12 @@ body {
     350px auto;
 }
 
+#infoQuestao {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
 #textoBase {
   text-align: justify;
   line-height: 1.6;

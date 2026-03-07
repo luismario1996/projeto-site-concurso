@@ -10,7 +10,7 @@
   <body>
     <!-- LOGIN -->
     <div class="container" id="login">
-      <h1>Banco De Dados Conacurso</h1>
+      <h1>Banco De Dados Concurso</h1>
       <input type="text" id="nome" placeholder="Digite seu nome" />
       <button onclick="entrar()">Entrar</button>
     </div>
@@ -32,12 +32,21 @@
     <!-- QUIZ -->
     <div class="container hidden" id="quiz">
       <h2 id="tituloQuiz"></h2>
+
       <div id="statusQuestao"></div>
+
+      <div id="infoQuestao"></div>
+
       <h3 id="tituloQuestao"></h3>
+
       <div id="textoBase" style="text-align: left; margin-bottom: 15px"></div>
+
       <div id="comandoQuestao" style="margin-bottom: 15px"></div>
+
       <div id="alternativas"></div>
+
       <button onclick="voltarSubtema()" class="voltar">Voltar</button>
+
       <button onclick="proxima()" id="btnProxima" class="hidden">
         Próxima
       </button>

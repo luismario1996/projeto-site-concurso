@@ -95,6 +95,9 @@ function iniciarQuiz(sub) {
 function mostrarPergunta() {
   let questao = bancoQuestoes[materiaAtual][subtemaAtual][indice];
 
+  document.getElementById("infoQuestao").innerText =
+    `Banca: ${questao.banca || "-"} | Nível: ${questao.nivel || "-"} | Cargo: ${questao.cargo || "-"}`;
+
   document.getElementById("tituloQuestao").innerText = questao.titulo || "";
 
   document.getElementById("textoBase").innerText = questao.texto || "";
