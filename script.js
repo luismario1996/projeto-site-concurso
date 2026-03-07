@@ -94,7 +94,13 @@ function iniciarQuiz(sub) {
 
 function mostrarPergunta() {
   let questao = bancoQuestoes[materiaAtual][subtemaAtual][indice];
-  document.getElementById("pergunta").innerText = questao.pergunta;
+
+  document.getElementById("tituloQuestao").innerText = questao.titulo || "";
+
+  document.getElementById("textoBase").innerText = questao.texto || "";
+
+  document.getElementById("comandoQuestao").innerText = questao.comando || "";
+
   let divAlt = document.getElementById("alternativas");
   divAlt.innerHTML = "";
 
@@ -103,8 +109,11 @@ function mostrarPergunta() {
 
   for (let letra in questao.alternativas) {
     let btn = document.createElement("button");
+
     btn.innerText = `${letra}) ${questao.alternativas[letra]}`;
+
     btn.onclick = () => verificar(btn, letra);
+
     divAlt.appendChild(btn);
   }
 }

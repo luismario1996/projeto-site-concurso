@@ -30,6 +30,12 @@ body {
     350px auto;
 }
 
+#textoBase {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 /* Container principal */
 .container {
   width: 100%;

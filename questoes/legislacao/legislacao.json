@@ -1,324 +1,41 @@
 {
-  "interpretacao": [
+  "Compreensão de textos": [
     {
-      "pergunta": "2) Sobre pontuação, tem-se que a vírgula, entre os\ntermos de uma oração, é empregada para “(...)\nTexto 1- O que nos mantém vivos?\nseparar os termos coordenados assindéticos, ou\n(por Ricardo Viveiros)\nseja, os termos que não são unidos por conectivo.\n“Mais um ano se inicia na vida de todos nós.\nEsses termos devem ter mesma função sintática,\nFicamos ‘bonzinhos’ na época de Natal, fizemos\nque formam, muitas vezes, enumerações” (Bezerra,\npromessas de mudanças para 2024 e seguimos\n2015, p. 671). A partir dos fragmentos do texto 1\nenfrentando novos e velhos problemas. É verdade distribuídos entre as alternativas, assinale a\nque em termos de Brasil estamos evoluindo em\nalternativa que exemplifique o conceito\ndiversos aspectos no esforço concentrado para\napresentado.\nreparar danos do passado.",
+      "pergunta": "Assinale a alternativa que apresenta uma sequência de palavras formadas pela antepenúltima sílaba tônica acentuada e pronunciada com maior força e intensidade: as palavras proparoxítonas",
       "alternativas": {
-        "a": "Soberania, independência, liberdade, democracia e",
-        "b": "Ao olhar com atenção além de nós, para o mundo",
-        "c": "Para o mundo como um todo, surge uma pergunta.",
-        "d": "Ter saúde, responderão outras.",
-        "e": "Nesse âmbito está a Política - desde que assim, com"
-      }
+        "A": "nós - mantém - fé",
+        "B": "saúde - independência - violência",
+        "C": "econômico - âmbito - maiúscula",
+        "D": "Política - dirão - equilíbrio",
+        "E": "há - é - educação"
+      },
+      "correta": "C"
     },
+
     {
-      "pergunta": "3) Em relação à classe de palavras, observe que\nPara nos mantermos vivos há, entretanto, outras\n‘bonzinhos’ é a forma diminutiva de ‘bom’.\nnecessidades que passam pela paz, meio\nAssinale a alternativa incorreta em relação à\nambiente, segurança alimentar, cultura, educação\nortografia da formação sufixal do diminutivo.\ne, claro, o equilíbrio econômico com crescimento",
+      "pergunta": "O que é predicado?",
       "alternativas": {
-        "a": "Raiz - Raizinha. d) Casa - Casinha.",
-        "b": "Chinês - Chinesinho. e) Nariz - Narisinho.",
-        "c": "Princesa - Princesinha."
-      }
-    },
+        "A": "Parte que indica ação",
+        "B": "Parte que indica sujeito",
+        "C": "Nome do sujeito",
+        "D": "Advérbio",
+        "E": "Objeto direto"
+      },
+      "correta": "A"
+    }
+  ],
+
+  "Ortografia": [
     {
-      "pergunta": "1) Analise as afirmativas abaixo e dê valores especificamente quando o sujeito é formado por\nVerdadeiro (V) ou Falso (F). pronomes interrogativos: que, que o que.\n( ) O texto 1 tem como único enfoque o nosso Estão corretas as afirmativas:\ncomportamento na época do Natal.",
+      "pergunta": "Como se escreve corretamente?",
       "alternativas": {
-        "a": "I apenas. d) III apenas.",
-        "b": "II apenas. e) I e III apenas.",
-        "c": "I e II apenas."
-      }
-    },
-    {
-      "pergunta": "5) Assinale a alternativa que apresenta uma sequência\n( ) Paz, meio ambiente, segurança alimentar,\nde palavras formadas pela antepenúltima sílaba\ncultura, educação e equilíbrio econômico com\ntônica acentuada e pronunciada com maior força e\ncrescimento sustentável são algumas\nintensidade: as palavras proparoxítonas.\nnecessidades para a manutenção de nossa",
-      "alternativas": {
-        "a": "V - F - F - F - F seus termos essenciais.",
-        "b": "F - V - V - F - F a) oração subordinada substantiva predicativa do",
-        "c": "oração coordenada assindética aditiva",
-        "d": "oração formada por sujeito oculto e predicado",
-        "e": "oração formada por sujeito composto e não há"
-      }
-    },
-    {
-      "pergunta": "7) Leia a explicação sobre acentuação e identifique o 8) Observe o fragmento e: assinale a alternativa\nsinal utilizado na formação da crase: que contenha o mesmo padrão de colocações\n“Os acentos são notações léxicas empregadas pronominais.\nsobre algumas vogais para indicar a sílaba tônica\n“O que nos impede? (...) tornamo-nos os melhores\nou para indicar a fusão entre elas (...)”.\nno que fazemos”.\n(Bezerra, 2015, p. 60)\nI. Visitar-te-ei amanhã, daí já lhe entregarei os",
-      "alternativas": {
-        "a": "Ser responsável por organizar e gerenciar todos",
-        "b": "Oferecer uma interface gráfica amigável, com",
-        "c": "O único propósito do Windows é gerenciar os",
-        "d": "Incluir recursos de segurança para proteger o",
-        "e": "O Windows é responsável por gerenciar os"
-      }
-    },
-    {
-      "pergunta": "12) Em ambientes empresariais de menor porte, existe 18) No que se refere às características populacionais de\numa topologia de rede que é predominante. Diante do Manaus, com base no Censo Demográfico de 2022,\nexposto assinale a alternativa que apresenta esta tal assinale a afirmativa correta:\ntopologia de rede predominante.",
-      "alternativas": {
-        "a": "Estrela d) Espiral b) Tem menos de 1 milhão de habitantes",
-        "b": "Híbrida e) Barramento c) Tem mais de 2 milhões de habitantes",
-        "c": "Anel d) Tem mais de 5 milhões de habitantes",
-        "e": "Tem mais de 10 milhões de habitantes"
-      }
-    },
-    {
-      "pergunta": "13) Referente a definição de \"Armazenamento de Dados\nna Nuvem (cloud storage)\", assinale a alternativa que 19) São diversos os atrativos turísticos na cidade de\napresenta a definição adequada, tecnicamente. Manaus. As alternativas abaixo são referentes a pontos",
-      "alternativas": {
-        "e": "Palácio Rio Negro",
-        "a": "Software de gerenciamento de arquivos turísticos da capital do estado Amazonas, exceto:",
-        "b": "Armazenamento físico em servidores locais a) Teatro Amazonas",
-        "c": "Um tipo de impressora na nuvem b) Igreja de São Sebastião",
-        "d": "Armazenamento exclusivo para vídeos c) Praia da Ponta Negra"
-      }
-    },
-    {
-      "pergunta": "14) O firewall exerce uma função crucial em sistemas\ncomputacionais. Assinale a alternativa que apresenta 20) “Manaus foi criada no século XVII para demonstrar a\na função crucial. presença lusitana e fixar domínio português na",
-      "alternativas": {
-        "a": "Otimizar o desempenho do sistema região amazônica, que na época já era considerada",
-        "b": "Monitorar e controlar o tráfego de rede posição estratégica em território brasileiro. O núcleo",
-        "c": "Fazer backup automático de arquivos urbano, localizado à margem esquerda do ______,",
-        "d": "Gerenciar senhas de usuários teve início com a construção do Forte da Barra de",
-        "e": "Monitorar a velocidade da Internet São José, idealizado pelo capitão de artilharia,"
-      }
-    },
-    {
-      "pergunta": "15) Examine atentamente a planilha eletrônica\nconvencionada a usar como o nascimento da\nExcel 365 abaixo:\ncidade” (IBGE CIDADES, 2023).\nA B\nAssinale a alternativa que preencha corretamente a\n1 12 13\nlacuna.\n2 10 11",
-      "alternativas": {
-        "a": "Ninguém será mantido em escravidão ou servidão; a",
-        "b": "Ao somar a célula A1 com a célula B2 teremos",
-        "c": "Todo ser humano tem direito, em plena igualdade, a",
-        "d": "Ao somar a célula A2 com a célula B2 teremos escravidão e o tráfico de escravos serão proibidos",
-        "e": "Ao dividir a célula B2 com a célula A2 teremos b) Todo ser humano tem o direito de ser, em todos os"
-      }
-    },
-    {
-      "pergunta": "16) Segundo o Instituto Brasileiro de Geografia e tribunal dependente e parcial\nEstatística (IBGE), o Amazonas é composto por 62 d) Ninguém será submetido à tortura, nem a tratamento\nmunicípios. Entre os municípios abaixo, assinale a ou castigo cruel, desumano ou degradante\nalternativa que apresenta aquele que faz limite com e) Todo ser humano tem direito à vida, à liberdade e à\na capital do estado, Manaus, de forma correta: segurança pessoal",
-      "alternativas": {
-        "d": "Ninguém será submetido à tortura, nem a tratamento",
-        "e": "Todo ser humano tem direito à vida, à liberdade e à",
-        "a": "Novo Airão d) Atalaia do Norte"
-      }
-    },
-    {
-      "pergunta": "17) A partir de 1870, Manaus viveu o surto da economia Verdadeiro (V) ou Falso (F).\ngomífera, encerrando-se em 1913, em virtude da ( ) Toda pessoa tem o direito de que se respeite sua\nperda do mercado mundial para a borracha asiática, integridade física, psíquica e moral.\nfazendo com que a cidade retornasse a um novo ( ) Ninguém deve ser submetido a torturas, nem a penas\nperíodo de isolamento até o advento da ______, ou tratos cruéis, desumanos ou degradantes. Toda\ninstalada da segunda metade do mesmo século pessoa privada da liberdade deve ser tratada com o\n(adaptado de IBGE CIDADES, 2023). respeito devido à dignidade inerente ao ser humano.\n( ) A pena abrange a pessoa do infrator e seus\nAssinale a alternativa que preencha\nsucessores, via de regra.\ncorretamente a lacuna:\nAssinale a alternativa que apresenta a sequência",
-      "alternativas": {
-        "a": "V - V - V d) V - V - F",
-        "b": "V - F - V e) F - V - F",
-        "c": "F - F - V",
-        "d": "Zona de Comércio do Norte",
-        "e": "Área de Produção Industrial da Amazônia"
-      }
-    },
-    {
-      "pergunta": "23) Os Direitos Humanos são direitos essenciais 26) De acordo com a Lei de Acesso à Informação\npara que o ser humano seja tratado com a (Lei nº 12.527/2011), assinale a alternativa que\ndignidade que lhe é inerente e aos quais fazem apresente corretamente a definição legal de\njus todos os membros da espécie humana. tratamento da informação:\nSobre o assunto, assinale a alternativa que",
-      "alternativas": {
-        "a": "Individualidade d) Renunciabilidade b) Conjunto de ações referentes à produção,",
-        "b": "Alienabilidade e) Indisponibilidade recepção, classificação, utilização, acesso,",
-        "c": "Taxatividade reprodução, transporte, transmissão,"
-      }
-    },
-    {
-      "pergunta": "24) No que se refere à Declaração de Pequim\neliminação, avaliação, destinação ou controle da\nAdotada pela Quarta Conferência Mundial sobre\ninformação\nas Mulheres: Ação para Igualdade,\nc) Qualidade da informação não modificada,\nDesenvolvimento e Paz, analise as afirmativas\ninclusive quanto à origem, trânsito e destino\nabaixo:\nd) Unidade de registro de informações, qualquer\nI. O fortalecimento e o avanço das mulheres, incluindo\nque seja o suporte ou formato\no direito à liberdade de pensamento, consciência,\ne) Dados, processados ou não, que podem ser\nreligião e crença, o que contribui para a satisfação\nutilizados para produção e transmissão de\ndas necessidades morais, éticas, espirituais e\nconhecimento, contidos em qualquer meio,\nintelectuais de mulheres e homens, individualmente\nsuporte ou formato\nou em comunidade, de forma a garantir-lhes a\npossibilidade de realizar seu pleno potencial na 27) Acerca das disposições da Lei de Improbidade\nsociedade e organizar suas vidas de acordo com as Administrativa (Lei nº 8.429/92), analise as\nsuas próprias aspirações. afirmativas abaixo:\nII. O fortalecimento das mulheres e sua plena\nparticipação, em condições de igualdade, em todas I. Considera-se dolo a vontade livre e consciente\nas esferas sociais, incluindo a participação nos de alcançar o resultado ilícito tipificado nos\nprocessos de decisão e acesso ao poder, são artigos da Lei de Improbidade Administrativa,\nfundamentais para o alcance da igualdade, não bastando a voluntariedade do agente.\ndesenvolvimento e paz. II. O mero exercício da função ou desempenho de\nIII. Os direitos das mulheres são direitos humanos. competências públicas, sem comprovação de\nato doloso com fim ilícito, não afasta a\nEstão corretas as afirmativas:\nresponsabilidade por ato de improbidade",
-      "alternativas": {
-        "c": "II e III apenas",
-        "d": "Unidade de registro de informações, qualquer",
-        "e": "Dados, processados ou não, que podem ser",
-        "a": "I, II e III d) I e III apenas",
-        "b": "I e II apenas e) I apenas"
-      }
-    },
-    {
-      "pergunta": "25) De acordo com a Lei Geral de Proteção de\nfunções e a integridade do patrimônio público e\nDados Pessoais (LGPD – Lei nº 13.709/2018),\nsocial dos Poderes Executivo, Legislativo e\nassinale a alternativa que apresente\nJudiciário, bem como da administração direta e\ncorretamente a definição legal de órgão de\nindireta, no âmbito da União, dos Estados, dos\npesquisa:\nMunicípios e do Distrito Federal.",
-      "alternativas": {
-        "a": "I, II e III",
-        "b": "I e II apenas",
-        "c": "Órgão do controlador que contém a descrição dos",
-        "d": "Órgão ou entidade da administração pública direta",
-        "e": "Órgão ou entidade, de direito público ou privado, que"
-      }
-    },
-    {
-      "pergunta": "28) A Lei de Improbidade Administrativa (Lei nº 30) Leia abaixo o artigo 99 do Código Civil, que\n8.429/92) prevê 3 espécies de atos de dispõe sobre bens públicos:\nimprobidade: atos de improbidade Art. 99. São bens públicos:\nadministrativa que importam enriquecimento I. os de uso comum do povo, tais como rios,\nilícito; atos de improbidade administrativa que mares, estradas, ruas e praças.\ncausam prejuízo ao erário e; atos de II. os de uso ______, tais como edifícios ou\nimprobidade administrativa que atentam contra terrenos destinados a serviço ou\nos princípios da Administração Pública. Sobre estabelecimento da administração federal,\no assunto, assinale a alternativa que apresente estadual, territorial ou municipal, inclusive os de\num ato de improbidade que atente contra os suas autarquias.\nprincípios da Administração Pública: III. os ______, que constituem o patrimônio das",
-      "alternativas": {
-        "a": "especial / patrimoniais / patrimoniais",
-        "b": "Permitir, facilitar ou concorrer para que terceiro pertencentes às pessoas jurídicas de direito",
-        "c": "individual / dominicais / especiais",
-        "d": "dominical / patrimoniais / especiais",
-        "e": "Perceber vantagem econômica para intermediar"
-      }
-    },
-    {
-      "pergunta": "29) Acerca das disposições legais e doutrinárias assinale a alternativa que apresente\nsobre processo administrativo, assinale a corretamente um princípio expresso da\nalternativa incorreta: Administração Pública previsto na CF:",
-      "alternativas": {
-        "a": "O processo administrativo pode iniciar-se de a) Investidura d) Eficiência",
-        "b": "A competência é irrenunciável e se exerce pelos c) Improbidade"
-      }
-    },
-    {
-      "pergunta": "32) A Constituição Federal dispõe sobre os\nprópria, salvo os casos de delegação e\nprincípios aplicáveis à República Federativa do\navocação legalmente admitidos\nBrasil nas suas relações internacionais. Sobre\nc) O ato de delegação e sua revogação deverão\no assunto, assinale a alternativa que apresente\nser publicados no meio oficial\nincorretamente um desses princípios:\nd) Podem ser objeto de delegação a edição de atos",
-      "alternativas": {
-        "c": "Cidadania",
-        "d": "Legalidade",
-        "a": "Prevalência dos direitos humanos",
-        "b": "Pluralismo político",
-        "e": "Desenvolvimento nacional"
-      }
-    },
-    {
-      "pergunta": "33) De acordo com as disposições da Constituição\nFederal sobre os direitos e deveres individuais\ne coletivos, analise as afirmativas abaixo e dê\nvalores de Verdadeiro (V) ou Falso (F).\n( ) É assegurada, nos termos da lei, a prestação de\nassistência religiosa nas entidades civis e\nmilitares de internação coletiva.\n( ) É assegurado o direito de resposta, proporcional\nao agravo, além da indenização por dano\nmaterial, moral ou à imagem.\n( ) É livre a manifestação do pensamento, sendo\nfomentado o anonimato.\nAssinale a alternativa que apresenta a\nsequência correta de cima para baixo.",
-      "alternativas": {
-        "a": "V - V - V d) V - V - F",
-        "b": "V - F - V e) F - V - F",
-        "c": "F - F - V"
-      }
-    },
-    {
-      "pergunta": "34) De acordo com as disposições constitucionais 36) A Constituição Federal estabelece que o Estado\nsobre os direitos políticos, assinale a promoverá e incentivará o desenvolvimento\nalternativa incorreta. científico, a pesquisa, a capacitação científica e",
-      "alternativas": {
-        "a": "A pesquisa científica básica e tecnológica",
-        "b": "Não podem alistar-se como eleitores os assinale a alternativa correta.",
-        "c": "O Estado apoiará a formação de recursos",
-        "d": "É proibido aos Estados e ao Distrito Federal",
-        "e": "A União, os Estados, o Distrito Federal e os"
-      }
-    },
-    {
-      "pergunta": "35) Acerca das disposições da Constituição\nde pesquisa, de desenvolvimento científico e\nFederal sobre o Meio Ambiente, analise as\ntecnológico e de inovação\nafirmativas abaixo:\nI. Aquele que explorar recursos minerais fica 37) A Constituição Federal prevê um rol de direitos\nobrigado a recuperar o meio ambiente sociais. Acerca da previsão constitucional,\ndegradado, de acordo com solução técnica assinale a alternativa que apresenta\nexigida pelo órgão público competente, na forma incorretamente um direito social:\nda lei.",
-      "alternativas": {
-        "a": "Educação d) Transporte",
-        "b": "Saúde e) Sufrágio",
-        "c": "Alimentação"
-      }
-    },
-    {
-      "pergunta": "38) De acordo com as disposições da Constituição\nutilização far-se-á, na forma da lei, dentro de\nFederal sobre a nacionalidade, assinale a\ncondições que assegurem a preservação do\nalternativa que apresente corretamente uma\nmeio ambiente, inclusive quanto ao uso dos\nhipótese de cargo privativo de brasileiro nato:\nrecursos naturais.",
-      "alternativas": {
-        "a": "Governador",
-        "b": "Oficial das Forças Armadas",
-        "c": "Prefeito",
-        "d": "Vereador",
-        "e": "Deputado Estadual"
-      }
-    },
-    {
-      "pergunta": "39) A Lei nº 23.869/2019 dispõe sobre os crimes de\nEstão corretas as afirmativas:\nabuso de autoridade. Sobre o tema, assinale a",
-      "alternativas": {
-        "a": "Os crimes de abuso de autoridade são de ação penal",
-        "b": "Será admitida ação privada se a ação penal pública",
-        "c": "A ação privada subsidiária será exercida no prazo de",
-        "d": "As penas restritivas de direitos devem ser aplicadas",
-        "e": "As notícias de crimes de abuso de autoridade que"
-      }
-    },
-    {
-      "pergunta": "40) De acordo com as disposições do Estatuto do 43) De acordo com o Código Penal e as disposições\nDesarmamento (Lei nº 10.826/2003), analise as sobre a aplicação da Lei Penal, assinale a\nafirmativas abaixo e dê valores de Verdadeiro alternativa incorreta:\n(V) ou Falso (F).",
-      "alternativas": {
-        "a": "V - V - V d) V - V - F",
-        "b": "V - F - V e) F - V - F 44) De acordo com as disposições do Código Penal",
-        "c": "F - F - V sobre os crimes contra a Administração",
-        "d": "A lei posterior, que de qualquer modo favorecer",
-        "e": "Não há crime sem lei anterior que o defina"
-      }
-    },
-    {
-      "pergunta": "41) Acerca dos crimes contra a Administração\ncorretamente a definição legal do crime de\nPública previstos no Código Penal, assinale a\ntráfico de influência:\nalternativa que apresenta corretamente a",
-      "alternativas": {
-        "a": "Facilitar, com infração de dever funcional, a prática",
-        "b": "Solicitar ou receber, para si ou para outrem, direta ou",
-        "c": "Exigir, para si ou para outrem, direta ou",
-        "d": "Deixar o funcionário, por indulgência, de",
-        "e": "Importar ou exportar mercadoria proibida"
-      }
-    },
-    {
-      "pergunta": "42) Acerca das disposições da Lei nº 11.343/2006 ( ) Do despacho que indeferir o requerimento de\n(Lei de Drogas), analise as afirmativas abaixo: abertura de inquérito caberá recurso para o\nI. A União, os Estados, o Distrito Federal e os chefe de Polícia.\nMunicípios poderão conceder benefícios às ( ) Qualquer pessoa do povo que tiver\ninstituições privadas que desenvolverem programas conhecimento da existência de infração penal\nde reinserção no mercado de trabalho, do usuário e em que caiba ação pública poderá, verbalmente\ndo dependente de drogas encaminhados por órgão ou por escrito, comunicá-la à autoridade policial,\noficial e esta, verificada a procedência das\nII. As instituições da sociedade civil, sem fins lucrativos, informações, mandará instaurar inquérito.\ncom atuação nas áreas da atenção à saúde e da ( ) A polícia judiciária será exercida pelas\nassistência social, que atendam usuários ou autoridades policiais no território de suas\ndependentes de drogas não poderão receber respectivas circunscrições e terá por fim a\nrecursos do Funad (Fundo Nacional Antidrogas), por apuração das infrações penais e da sua autoria.\nserem instituições privadas\nIII. O usuário e o dependente de drogas que, em razão Assinale a alternativa que apresenta a\nda prática de infração penal, estiverem cumprindo sequência correta de cima para baixo.\npena privativa de liberdade ou submetidos a medida",
-      "alternativas": {
-        "a": "I, II e III d) I e III apenas",
-        "b": "I e II apenas e) I apenas",
-        "c": "II e III apenas"
-      }
-    },
-    {
-      "pergunta": "46) Observando o que dispõe o Estatuto dos Servidores\ncorreta.\nPúblicos do Município de Manaus, Lei n. 1.118, de 1º",
-      "alternativas": {
-        "a": "I e II apenas d) II e III apenas",
-        "b": "As medidas protetivas de urgência poderão ser",
-        "c": "É vedado ao juiz decretar de ofício a prisão",
-        "d": "Exclui-se da competência dos Juizados de",
-        "e": "Faculta-se ao juiz a substituição de pena que"
-      }
-    },
-    {
-      "pergunta": "47) A respeito do que dispõe o Estatuto dos Servidores ( ) O policiamento ostensivo é um dos princípios\nPúblicos do Município de Manaus acerca do processo mínimos de atuação das guardas municipais.\nadministrativo, assinale a alternativa correta. ( ) O uso progressivo da força é um dos princípios",
-      "alternativas": {
-        "a": "V - F - F - V d) V - F - V - F",
-        "b": "F - F - V - F e) F - V - F - V",
-        "c": "F - F - F - V",
-        "d": "As conclusões da autoridade processante são",
-        "e": "O funcionário poderá ser exonerado a pedido, ainda a) As guardas municipais utilizarão uniforme e"
-      }
-    },
-    {
-      "pergunta": "48) Observando-se o que dispõe a Lei n. 11.340, de 7 de b) A estrutura hierárquica da guarda municipal não\nagosto de 2006, conhecida como Lei Maria da pode utilizar denominação idêntica à das forças\nPenha, analise as afirmativas abaixo: militares, quanto aos postos e graduações,\nI. Compreende-se como unidade doméstica a títulos, uniformes, distintivos e condecorações\ncomunidade formada por indivíduos que são ou c) Aos guardas municipais é autorizado o porte de\nse consideram aparentados, unidos por laços arma de fogo, conforme previsto em lei\nnaturais, por afinidade ou por vontade expressa. d) As guardas municipais não podem ficar sujeitas\nII. A violência doméstica e familiar contra a mulher a regulamentos disciplinares de natureza militar\nconstitui uma das formas de violação dos e) Municípios limítrofes podem, mediante\ndireitos humanos. consórcio público, utilizar, reciprocamente, os\nIII. São formas de violência doméstica e familiar serviços da guarda municipal de maneira\ncontra a mulher, entre outras, a violência compartilhada\npsicológica, entendida como qualquer conduta\nque configure calúnia, difamação ou injúria.\nIV. O juiz determinará, por prazo certo, a inclusão\nda mulher em situação de violência doméstica e\nfamiliar no cadastro de programas assistenciais\ndo governo federal, estadual e municipal.\nEstão corretas as afirmativas:",
-      "alternativas": {
-        "b": "I e IV apenas e) III e IV apenas",
-        "c": "II e IV apenas",
-        "d": "As guardas municipais não podem ficar sujeitas",
-        "e": "Municípios limítrofes podem, mediante",
-        "a": "I e II apenas d) II e III apenas"
-      }
-    },
-    {
-      "pergunta": "52) De acordo com o que dispõe o Estatuto da 55) Para efeito da Lei n. 12.288, de 20 de julho de\nGuarda Municipal de Manaus acerca das 2010 (Estatuto da Igualdade Racial), considera-\ndisposições gerais da ouvidoria, analise o texto se:\nabaixo: I. ______: toda distinção, exclusão, restrição ou\n“Art. 32. A Ouvidoria da Guarda Municipal de preferência baseada em raça, cor,\nManaus, criada mediante ______, como órgão descendência ou origem nacional ou étnica que\n______, ______ e independente, tem competência tenha por objeto anular ou restringir o\npara fiscalizar, investigar, auditar e propor políticas reconhecimento, gozo ou exercício, em\nde qualificação das atividades desenvolvidas pelos igualdade de condições, de direitos humanos e\nintegrantes da Guarda Municipal de Manaus.” liberdades fundamentais nos campos político,\neconômico, social, cultural ou em qualquer outro\nAssinale a alternativa que preencha correta e campo da vida pública ou privada.\nrespectivamente as lacunas. II. ______: toda situação injustificada de",
-      "alternativas": {
-        "a": "decreto / permanente / autônomo diferenciação de acesso e fruição de bens,",
-        "b": "decreto / permanente / subordinado serviços e oportunidades, nas esferas pública e",
-        "c": "lei específica / esporádico / autônomo privada, em virtude de raça, cor, descendência",
-        "d": "lei específica / permanente / autônomo ou origem nacional ou étnica.",
-        "e": "lei específica / esporádico / subordinado III. ______: as ações, iniciativas e programas"
-      }
-    },
-    {
-      "pergunta": "53) A respeito da Lei Complementar n. 16, de 21 de atribuições institucionais.\ndezembro de 2021, que dispõe sobre o Estatuto IV. ______: os programas e medidas especiais\nda Guarda Municipal de Manaus e dá outras adotados pelo Estado e pela iniciativa privada\nprovidências, analise as afirmativas abaixo: para a correção das desigualdades raciais e\nI. O guarda municipal de Manaus poderá ser para a promoção da igualdade de\nalocado nos campos operacional e oportunidades.\nadministrativo, excluindo-se da atuação no\nâmbito administrativo os ocupantes da classe Assinale a alternativa que preencha correta e\ninicial. respectivamente as lacunas.\nII. É defeso o exercício simultâneo de cargo em",
-      "alternativas": {
-        "a": "I e II apenas d) II e III apenas étnico-racial / ações afirmativas / políticas",
-        "b": "I e IV apenas e) III e IV apenas públicas",
-        "c": "II e IV apenas e) desigualdade de gênero e raça / discriminação",
-        "d": "desigualdade racial / discriminação racial ou"
-      }
-    },
-    {
-      "pergunta": "54) A respeito dos crimes e das penas previstos no afirmativas\nEstatuto do Desarmamento, assinale a\nalternativa correta.",
-      "alternativas": {
-        "a": "O crime de posse irregular de arma de fogo de",
-        "b": "O crime de disparo de arma de fogo é",
-        "c": "O crime de comércio ilegal de arma de fogo é",
-        "d": "O crime de omissão de cautela é inafiançável",
-        "e": "O crime de tráfico internacional de arma de fogo"
-      }
-    },
-    {
-      "pergunta": "56) A respeito do que dispõe o Estatuto da Criança e do 59) Considerando o disposto na Lei n. 11.343, de 23\nAdolescente acerca dos crimes, analise as afirmativas de agosto de 2006, conhecida como Lei de\nabaixo e dê valores Verdadeiro (V) ou Falso (F). Drogas, assinale a alternativa incorreta.\n( ) Aos crimes cometidos contra a criança e o adolescente",
-      "alternativas": {
-        "a": "V - F - F - V d) V - F - V - F qualquer natureza utilizados para a prática, habitual",
-        "b": "F - F - V - F e) F - V - F - V ou não, dos crimes definidos nesta Lei será",
-        "c": "F - F - F - V imediatamente comunicada pela autoridade de",
-        "d": "A apreensão de veículos, embarcações, aeronaves"
-      }
-    },
-    {
-      "pergunta": "57) Observando o que dispõe a Lei n. 13.869, de 5\njuízo competente\nde setembro de 2019, conhecida como Lei de\ne) O juiz determinará a liberação total ou parcial dos\nAbuso de Autoridade, assinale a alternativa\nbens, direitos e objeto de medidas assecuratórias\nincorreta.\nquando comprovada a licitude de sua origem,",
-      "alternativas": {
-        "e": "As penas restritivas de direitos podem ser aplicadas permanentes, do dia em que cessou a permanência",
-        "a": "A ação para a aplicação das sanções previstas nesta",
-        "b": "A instauração de inquérito civil ou de processo",
-        "c": "Entre as penas restritivas de direitos substitutivas das prática de atos de improbidade, além de dar",
-        "d": "As responsabilidades civil e administrativa são prescrição, assinale a alternativa correta."
-      }
-    },
-    {
-      "pergunta": "58) A respeito do que dispõe a Lei de Drogas (Lei n.\nnesta Lei suspende o curso do prazo prescricional\n11.343, de 23 de agosto de 2006) acerca do\npor, no máximo, 90 (novent",
-      "alternativas": {
-        "a": ", conteúdo disponibilizado em https://www.fashionbubbles.com/tecnologia/livro-marketing-comunicacao-tecnologia-inovacao-nas-",
-        "c": "II e IV apenas",
-        "d": "Encerrado o prazo para conclusão do inquérito",
-        "e": "Nos atos de improbidade conexos que sejam objeto",
-        "b": "I e IV apenas e) III e IV apenas"
-      }
+        "A": "Excessão",
+        "B": "Exceção",
+        "C": "Exseção",
+        "D": "Exceçãon",
+        "E": "Exceçã"
+      },
+      "correta": "B"
     }
   ]
 }
