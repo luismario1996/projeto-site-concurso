@@ -11,57 +11,25 @@ body {
   color: #fff;
   min-height: 100vh;
   padding: 20px;
-
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
+  flex-direction: column;
+  justify-content: flex-start;
   /* imagens laterais */
   background-image: url(./img/esquerda.png), url(./img/esquerda.png);
-
   background-position:
     left center,
     right center;
-
   background-repeat: no-repeat, no-repeat;
-
   background-size:
     350px auto,
     350px auto;
 }
 
-#infoQuestao {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-#textoBase {
-  text-align: justify;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-body {
-  font-size: 18px;
-}
-
-button {
-  font-size: 18px;
-  padding: 12px;
-}
-
-.card {
-  font-size: 18px;
-  padding: 15px;
-}
-
 /* Container principal */
 .container {
-  width: 95%;
-  max-width: 1110px;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
-  padding: 20px;
   background-color: #1f1f1f;
   padding: 40px;
   border-radius: 15px;
@@ -70,14 +38,12 @@ button {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Títulos */
 h1,
 h2 {
   color: #e50914;
   margin-bottom: 20px;
 }
 
-/* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -98,7 +64,6 @@ input:focus {
   box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
 }
 
-/* Botões gerais */
 button {
   padding: 14px 28px;
   margin: 8px;
@@ -125,7 +90,6 @@ button:disabled {
   transform: none;
 }
 
-/* Botão Voltar */
 button.voltar {
   background-color: #757575;
 }
@@ -134,7 +98,6 @@ button.voltar:hover {
   background-color: #616161;
 }
 
-/* Cards de matérias e subtemas */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -176,7 +139,6 @@ button.voltar:hover {
   font-size: 1.2rem;
 }
 
-/* Alternativas de quiz */
 #alternativas {
   display: flex;
   flex-direction: column;
@@ -191,14 +153,12 @@ button.voltar:hover {
   font-size: 16px;
 }
 
-/* Status da questão */
 #statusQuestao {
   margin: 10px 0;
   font-weight: bold;
   color: #e50914;
 }
 
-/* Correto / errado */
 .correct {
   background: #43a047 !important;
   color: #fff;
@@ -208,25 +168,21 @@ button.voltar:hover {
   color: #fff;
 }
 
-/* Ocultar elementos */
 .hidden {
   display: none;
 }
 
-/* Responsivo */
 @media screen and (max-width: 768px) {
   .container {
     width: 95%;
     padding: 20px;
   }
-
   .card {
     width: 45%;
     height: 100px;
   }
 }
 
-/* Animação fade */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -236,4 +192,13 @@ button.voltar:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  padding: 10px 0;
+  margin-top: 20px;
 }
