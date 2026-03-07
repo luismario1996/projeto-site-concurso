@@ -23,15 +23,15 @@ function abrirMenu() {
   container.innerHTML = "";
 
   const materias = {
-    portugues: "Língua Portuguesa",
-    informatica: "Noções de Informática",
+    Portugues: "Língua Portuguesa",
+    Informatica: "Noções de Informática",
     "geografia-historia-manaus": "Geografia e História",
-    direitoshumanos: "Direitos Humanos",
-    direitoadministrativo: "Direito Administrativo",
-    direitoconstitucional: "Direito Constitucional",
-    direitopenal: "Direito Penal",
-    direitoprocessual: "Direito Processual",
-    legislacao: "Legislação",
+    DireitosHumanos: "Direitos Humanos",
+    DireitoAdministrativo: "Direito Administrativo",
+    DireitoConstitucional: "Direito Constitucional",
+    DireitoPenal: "Direito Penal",
+    DireitoProcessual: "Direito Processual",
+    Legislacao: "Legislação",
   };
 
   for (let key in materias) {

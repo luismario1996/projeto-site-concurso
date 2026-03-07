@@ -1,9 +1,9 @@
 {
   "Interpretação": [
     {
-      "banca": "IBGP",
-      "nivel": "Superior",
-      "cargo": "Professor de Português",
+      "banca": "IBFC",
+      "nivel": "Médio",
+      "cargo": "Guarda Municipal",
       "titulo": "Texto 1 - O que nos mantém vivos? (Ricardo Viveiros)",
 
       "texto": "Mais um ano se inicia na vida de todos nós. Ficamos 'bonzinhos' na época de Natal, fizemos promessas de mudanças para 2024 e seguimos enfrentando novos e velhos problemas. É verdade que em termos de Brasil estamos evoluindo em diversos aspectos no esforço concentrado para reparar danos do passado.\n\nAo olhar com atenção além de nós, para o mundo como um todo, surge uma pergunta: o que nos mantém vivos? A fé, a esperança em dias melhores para muitas pessoas. Ter saúde, responderão outras. Várias dirão que os seus compromissos familiares, os que amam e delas dependem. Algumas afirmarão que é ter sonhos. Tudo isso é verdadeiro.\n\nPara nos mantermos vivos há, entretanto, outras necessidades que passam pela paz, meio ambiente, segurança alimentar, cultura, educação e, claro, o equilíbrio econômico com crescimento sustentável.\n\nRespeito é essencial. Soberania, independência, liberdade, democracia e direitos humanos. Nesse âmbito está a Política – desde que assim, com maiúscula.\n\nTemos visto tantos desentendimentos, incompreensões, projetos pessoais em vez de coletivos, corrupção, violência. Tudo nos faz correr o risco do mal maior: a desesperança.",
@@ -18,6 +18,28 @@
       },
 
       "correta": "b"
+    }
+  ],
+
+  "Pontuação": [
+    {
+      "banca": "IBGP",
+      "nivel": "Superior",
+      "cargo": "Professor de Língua Portuguesa",
+
+      "titulo": "Uso da vírgula em termos coordenados",
+
+      "comando": "Sobre pontuação, tem-se que a vírgula, entre os termos de uma oração, é empregada para separar os termos coordenados assindéticos (sem conectivo). A partir dos fragmentos do texto 1 distribuídos entre as alternativas, assinale a alternativa que exemplifique o conceito apresentado.",
+
+      "alternativas": {
+        "a": "Soberania, independência, liberdade, democracia e direitos humanos.",
+        "b": "Ao olhar com atenção além de nós, para o mundo como um todo.",
+        "c": "Para o mundo como um todo, surge uma pergunta.",
+        "d": "Ter saúde, responderão outras.",
+        "e": "Nesse âmbito está a Política - desde que assim, com maiúscula."
+      },
+
+      "correta": "a"
     }
   ]
 }
