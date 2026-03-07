@@ -44,9 +44,10 @@ body {
 
 /* Container principal */
 .container {
-  width: 100%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 1110px;
   margin: auto;
+  padding: 20px;
   background-color: #1f1f1f;
   padding: 40px;
   border-radius: 15px;
