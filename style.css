@@ -42,6 +42,20 @@ body {
   margin-bottom: 20px;
 }
 
+body {
+  font-size: 18px;
+}
+
+button {
+  font-size: 18px;
+  padding: 12px;
+}
+
+.card {
+  font-size: 18px;
+  padding: 15px;
+}
+
 /* Container principal */
 .container {
   width: 95%;
