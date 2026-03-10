@@ -1,3 +1,9 @@
+function resetarEstatisticas() {
+  localStorage.removeItem("estatisticas");
+
+  location.reload();
+}
+
 let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
   respondidas: 0,
   acertos: 0,
