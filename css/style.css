@@ -154,6 +154,7 @@ body {
 .submenu-list {
   display: none;
   padding: 0;
+  list-style: none;
 }
 
 /* quando estiver ativo */
