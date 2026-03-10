@@ -23,9 +23,9 @@ function toggleMenu() {
 function toggleSubmenu(botao) {
   let item = botao.parentElement;
 
-  let todos = document.querySelectorAll(".submenu");
+  let menus = document.querySelectorAll(".submenu");
 
-  todos.forEach((menu) => {
+  menus.forEach((menu) => {
     if (menu !== item) {
       menu.classList.remove("ativo");
     }

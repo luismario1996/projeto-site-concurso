@@ -220,11 +220,37 @@
 
     <main>
       <div class="container">
+        <section class="filtros">
+          <h3>Filtrar Questões</h3>
+
+          <select id="filtroMateria">
+            <option value="">Matéria</option>
+          </select>
+
+          <select id="filtroAssunto">
+            <option value="">Assunto</option>
+          </select>
+
+          <select id="filtroBanca">
+            <option value="">Banca</option>
+          </select>
+
+          <select id="filtroAno">
+            <option value="">Ano</option>
+          </select>
+
+          <button onclick="filtrarQuestoes()">Aplicar Filtro</button>
+        </section>
+
         <div id="statusQuestao"></div>
+        <br />
+
+        <div id="contadorQuestoes" class="contador"></div>
 
         <div id="pergunta" class="pergunta"></div>
 
         <div id="alternativas"></div>
+        <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
 
         <button class="botao" onclick="verificar()">Responder</button>
 
@@ -234,14 +260,14 @@
 
         <div id="estatisticas"></div>
 
-        <button class="botao" onclick="proxima()">Próxima questão</button>
+        <div class="navegacao">
+          <button class="botao" onclick="anterior()">◀ Anterior</button>
+
+          <button class="botao" onclick="proxima()">Próxima ▶</button>
+        </div>
       </div>
 
       <button onclick="resetarEstatisticas()">Resetar desempenho</button>
-
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-      <script src="./js/questoes.js"></script>
     </main>
 
     <footer class="footer">
@@ -263,6 +289,8 @@
 
       <p class="copy">SoQuestões 2026 ©</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/questoes.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

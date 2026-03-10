@@ -2,30 +2,66 @@
   "questoes": [
     {
       "id": 1,
-      "tema": "Língua Portuguesa",
-      "subtema": "Compreensão e interpretação de textos",
-      "pergunta": "Qual é o principal objetivo de um texto dissertativo?",
+      "materia": "matematica",
+      "assunto": "montanhas",
+      "banca": "IBFC",
+      "ano": 2024,
+      "pergunta": "Qual frase está correta 2025?",
       "alternativas": {
-        "a": "Narrar uma história",
-        "b": "Defender uma ideia",
-        "c": "Descrever um lugar",
-        "d": "Contar um fato"
+        "a": "Vou a escola",
+        "b": "Vou à escola",
+        "c": "Vou à escola",
+        "d": "Vou a escola amanhã"
       },
       "correta": "b"
     },
 
     {
       "id": 2,
-      "tema": "Informática",
-      "subtema": "Segurança da informação",
-      "pergunta": "Qual programa protege o computador contra vírus?",
+      "materia": "português",
+      "assunto": "atomos",
+      "banca": "fgv",
+      "ano": 2022,
+      "pergunta": "Assinale a frase correta. 2022",
       "alternativas": {
-        "a": "Word",
-        "b": "Excel",
-        "c": "Antivírus",
-        "d": "PowerPoint"
+        "a": "Entreguei a carta a professora",
+        "b": "Entreguei a carta à professora",
+        "c": "Entreguei a carta à professora",
+        "d": "Entreguei à carta professora"
       },
-      "correta": "c"
+      "correta": "b"
+    },
+
+    {
+      "id": 3,
+      "materia": "geografia",
+      "assunto": "montanhas",
+      "banca": "IBFC",
+      "ano": 2024,
+      "pergunta": "Qual frase está correta 2025?",
+      "alternativas": {
+        "a": "Vou a escola",
+        "b": "Vou à escola",
+        "c": "Vou à escola",
+        "d": "Vou a escola amanhã"
+      },
+      "correta": "b"
+    },
+
+    {
+      "id": 4,
+      "materia": "fisica",
+      "assunto": "atomos",
+      "banca": "fgv",
+      "ano": 2022,
+      "pergunta": "Assinale a frase correta. 2022",
+      "alternativas": {
+        "a": "Entreguei a carta a professora",
+        "b": "Entreguei a carta à professora",
+        "c": "Entreguei a carta à professora",
+        "d": "Entreguei à carta professora"
+      },
+      "correta": "b"
     }
   ]
 }

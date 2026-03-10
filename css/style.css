@@ -153,16 +153,22 @@ body {
 
 .submenu-list {
   max-height: 0;
+
   overflow: hidden;
-
-  transition: max-height 0.35s ease;
-
-  padding: 0;
   list-style: none;
+  transition: max-height 0.4s ease;
+
+  padding-left: 20px;
+}
+
+.submenu-list li {
+  padding: 10px;
+
+  border-bottom: 1px solid #eee;
 }
 
 .submenu.ativo .submenu-list {
-  max-height: 500px;
+  max-height: 600px;
 }
 
 /* OVERLAY */
@@ -582,4 +588,98 @@ body.menu-aberto {
 
 .submenu.ativo .seta {
   transform: rotate(180deg);
+}
+.seta {
+  float: right;
+
+  transition: transform 0.3s ease;
+}
+
+.submenu.ativo .seta {
+  transform: rotate(180deg);
+}
+
+.filtros {
+  background: white;
+
+  padding: 20px;
+
+  margin: 20px auto;
+
+  max-width: 700px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filtros select {
+  width: 100%;
+
+  padding: 10px;
+
+  margin-bottom: 10px;
+
+  border-radius: 6px;
+
+  border: 1px solid #ccc;
+}
+
+.filtros button {
+  background: #0b4db3;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px;
+
+  width: 100%;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.contador {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navegacao-questoes {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-numero {
+  padding: 6px 10px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-numero:hover {
+  background: #007bff;
+  color: white;
+}
+
+.questao-acerto {
+  background: #2ecc71;
+  color: white;
+}
+
+.questao-erro {
+  background: #e74c3c;
+  color: white;
 }
