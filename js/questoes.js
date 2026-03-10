@@ -1,3 +1,9 @@
+let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
+  respondidas: 0,
+  acertos: 0,
+  erros: 0,
+};
+
 let questoes = [];
 let atual = 0;
 let respostaUsuario = null;
@@ -41,11 +47,23 @@ function selecionar(letra, elemento) {
 function verificar() {
   let q = questoes[atual];
 
+  // soma uma questão respondida
+  estatisticas.respondidas++;
+
   if (respostaUsuario === q.correta) {
+    estatisticas.acertos++;
+
     document.getElementById("resultado").innerText = "✅ Resposta correta";
   } else {
+    estatisticas.erros++;
+
     document.getElementById("resultado").innerText = "❌ Resposta errada";
   }
+
+  // salva no navegador
+  localStorage.setItem("estatisticas", JSON.stringify(estatisticas));
+
+  mostrarEstatisticas();
 }
 
 function proxima() {
@@ -61,3 +79,24 @@ function proxima() {
 
   carregarQuestao();
 }
+
+function mostrarEstatisticas() {
+  let porcentagem = 0;
+
+  if (estatisticas.respondidas > 0) {
+    porcentagem = Math.round(
+      (estatisticas.acertos / estatisticas.respondidas) * 100,
+    );
+  }
+
+  document.getElementById("estatisticas").innerHTML = `
+
+📊 Respondidas: ${estatisticas.respondidas} <br>
+✅ Acertos: ${estatisticas.acertos} <br>
+❌ Erros: ${estatisticas.erros} <br>
+🎯 Desempenho: ${porcentagem}%
+
+`;
+}
+
+mostrarEstatisticas();
