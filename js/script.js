@@ -20,13 +20,16 @@ function toggleMenu() {
     body.classList.add("menu-aberto");
   }
 }
-
 function toggleSubmenu(botao) {
-  let lista = botao.nextElementSibling;
+  let item = botao.parentElement;
 
-  if (lista.style.display === "block") {
-    lista.style.display = "none";
-  } else {
-    lista.style.display = "block";
-  }
+  let todos = document.querySelectorAll(".submenu");
+
+  todos.forEach((menu) => {
+    if (menu !== item) {
+      menu.classList.remove("ativo");
+    }
+  });
+
+  item.classList.toggle("ativo");
 }

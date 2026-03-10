@@ -152,15 +152,17 @@ body {
 /* SUBMENU */
 
 .submenu-list {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.35s ease;
+
   padding: 0;
   list-style: none;
 }
 
-/* quando estiver ativo */
-
 .submenu.ativo .submenu-list {
-  display: block;
+  max-height: 500px;
 }
 
 /* OVERLAY */
@@ -571,4 +573,13 @@ body.menu-aberto {
 
 .menu-list {
   overscroll-behavior: contain;
+}
+
+.seta {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.submenu.ativo .seta {
+  transform: rotate(180deg);
 }
