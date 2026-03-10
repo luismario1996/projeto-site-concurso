@@ -1,7 +1,6 @@
 let respostas = JSON.parse(localStorage.getItem("respostas")) || {};
-
+let favoritas = JSON.parse(localStorage.getItem("favoritas")) || [];
 let respondidas = JSON.parse(localStorage.getItem("respondidas")) || [];
-
 let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
   respondidas: 0,
   acertos: 0,
@@ -101,6 +100,7 @@ function filtrarQuestoes() {
   let assunto = document.getElementById("filtroAssunto").value;
   let banca = document.getElementById("filtroBanca").value;
   let ano = document.getElementById("filtroAno").value;
+  let revisao = document.getElementById("filtroRevisao").value;
 
   questoesFiltradas = questoes.filter((q) => {
     if (materia && q.materia !== materia) return false;
@@ -110,6 +110,16 @@ function filtrarQuestoes() {
     if (banca && q.banca !== banca) return false;
 
     if (ano && q.ano != ano) return false;
+
+    // FILTRO DE REVISÃO
+
+    if (revisao === "erro" && respostas[q.id] !== "erro") return false;
+
+    if (revisao === "acerto" && respostas[q.id] !== "acerto") return false;
+
+    if (revisao === "nao" && respostas[q.id]) return false;
+
+    if (revisao === "favorita" && !favoritas.includes(q.id)) return false;
 
     return true;
   });
@@ -329,4 +339,19 @@ function criarNavegacao() {
 
     container.appendChild(botao);
   });
+}
+function favoritarQuestao() {
+  let q = questoesFiltradas[atual];
+
+  if (!q) return;
+
+  if (favoritas.includes(q.id)) {
+    favoritas = favoritas.filter((id) => id !== q.id);
+  } else {
+    favoritas.push(q.id);
+  }
+
+  localStorage.setItem("favoritas", JSON.stringify(favoritas));
+
+  alert("Favorito atualizado ⭐");
 }
