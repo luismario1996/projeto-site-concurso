@@ -69,7 +69,9 @@ function verificar() {
   // salva no navegador
   localStorage.setItem("estatisticas", JSON.stringify(estatisticas));
 
+  carregarQuestao();
   mostrarEstatisticas();
+  atualizarGrafico();
 }
 
 function proxima() {
@@ -106,3 +108,32 @@ function mostrarEstatisticas() {
 }
 
 mostrarEstatisticas();
+function atualizarGrafico() {
+  let ctx = document.getElementById("graficoDesempenho");
+
+  new Chart(ctx, {
+    type: "doughnut",
+
+    data: {
+      labels: ["Acertos", "Erros"],
+
+      datasets: [
+        {
+          data: [estatisticas.acertos, estatisticas.erros],
+
+          backgroundColor: ["#2ecc71", "#e74c3c"],
+        },
+      ],
+    },
+
+    options: {
+      responsive: true,
+
+      plugins: {
+        legend: {
+          position: "bottom",
+        },
+      },
+    },
+  });
+}
