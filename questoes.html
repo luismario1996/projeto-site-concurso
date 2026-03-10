@@ -3,84 +3,253 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Compreensão e Interpretação De Textos</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>SoQuestões</title>
     <link rel="shortcut icon" href="./img/logo (2).ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-    <style>
-      .container {
-        max-width: 700px;
-
-        margin: auto;
-
-        padding: 20px;
-      }
-
-      .pergunta {
-        font-size: 20px;
-
-        margin-bottom: 20px;
-      }
-
-      .alternativa {
-        display: block;
-
-        padding: 12px;
-
-        margin-bottom: 10px;
-
-        border: 1px solid #ddd;
-
-        border-radius: 8px;
-
-        cursor: pointer;
-      }
-
-      .alternativa:hover {
-        background: #f0f6ff;
-      }
-
-      .botao {
-        background: #07559b;
-
-        color: white;
-
-        border: none;
-
-        padding: 12px;
-
-        width: 100%;
-
-        border-radius: 8px;
-
-        font-size: 16px;
-
-        margin-top: 20px;
-
-        cursor: pointer;
-      }
-
-      .resultado {
-        margin-top: 20px;
-
-        font-weight: bold;
-      }
-    </style>
+    <!-- icones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
   <body>
-    <div class="container">
-      <div id="pergunta" class="pergunta"></div>
+    <header class="topo">
+      <button class="menu-btn" onclick="toggleMenu()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
 
-      <div id="alternativas"></div>
+      <img width="150" src="./img/logo-branca.png" alt="" />
+    </header>
 
-      <button class="botao" onclick="verificar()">Responder</button>
+    <nav class="menu-categorias">
+      <a href="#">Língua Portuguesa</a>
 
-      <div id="resultado" class="resultado"></div>
+      <a href="#">Direito</a>
 
-      <button class="botao" onclick="proxima()">Próxima questão</button>
-    </div>
+      <a href="#">Informática</a>
 
-    <script src="./js/questoes.js"></script>
+      <a href="#">Geografia e História</a>
+    </nav>
+
+    <!-- MENU LATERAL -->
+
+    <nav id="menu" class="menu">
+      <div class="menu-top">
+        <div class="avatar">
+          <i class="fas fa-user"></i>
+        </div>
+
+        <img width="150px" src="./img/logo-branca.png" alt="" />
+      </div>
+
+      <ul class="menu-list">
+        <li>
+          <a href="#"> <i class="fas fa-home"></i> Início </a>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-book"></i> Língua Portuguesa
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li>
+              <a href="./questoes.html" target="_blank"
+                >Compreensão e interpretação de textos</a
+              >
+            </li>
+
+            <li><a href="#">Tipologia textual</a></li>
+
+            <li><a href="#">Ortografia oficial</a></li>
+
+            <li><a href="#">Acentuação gráfica</a></li>
+
+            <li><a href="#">Emprego das classes de palavras</a></li>
+
+            <li><a href="#">Emprego do sinal indicativo de crase</a></li>
+
+            <li><a href="#">Sintaxe da oração e do período</a></li>
+
+            <li><a href="#">Pontuação</a></li>
+
+            <li><a href="#">Concordância nominal e verbal</a></li>
+
+            <li><a href="#">Regência nominal e verbal</a></li>
+
+            <li><a href="#">Significação das palavras</a></li>
+
+            <li>
+              <a href="#"> Redação oficial </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-scale-balanced"></i> Direito
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Direitos Humanos</a></li>
+
+            <li><a href="#">Direito Administrativo</a></li>
+
+            <li><a href="#">Direito Constitucional</a></li>
+
+            <li><a href="#">Direito Penal</a></li>
+
+            <li><a href="#">Direito Processual Penal</a></li>
+
+            <li><a href="#">Legislação</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-computer"></i> Informática
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Noções de sistema operacional (Windows)</a></li>
+
+            <li>
+              <a href="#"
+                >Edição de textos, planilhas e apresentações (Microsoft Office
+                365)</a
+              >
+            </li>
+
+            <li><a href="#">Redes de computadores</a></li>
+
+            <li><a href="#">Conceitos básicos de Internet e Intranet</a></li>
+
+            <li>
+              <a href="#"
+                >Programas de navegação (Internet Explorer, Firefox e Chrome)</a
+              >
+            </li>
+
+            <li>
+              <a href="#"
+                >Programas de correio eletrônico (Outlook e Thunderbird)</a
+              >
+            </li>
+
+            <li><a href="#">Sítios de busca e pesquisa na Internet</a></li>
+
+            <li><a href="#">Grupos de discussão</a></li>
+
+            <li><a href="#">Redes sociais</a></li>
+
+            <li><a href="#">Computação na nuvem (Cloud Computing)</a></li>
+
+            <li>
+              <a href="#">Organização e gerenciamento de arquivos e pastas</a>
+            </li>
+
+            <li><a href="#">Segurança da informação</a></li>
+
+            <li><a href="#">Procedimentos de segurança</a></li>
+
+            <li><a href="#">Vírus, worms e pragas virtuais</a></li>
+
+            <li>
+              <a href="#"
+                >Aplicativos de segurança (antivírus, firewall, anti-spyware)</a
+              >
+            </li>
+
+            <li><a href="#">Procedimentos de backup</a></li>
+
+            <li>
+              <a href="#">Armazenamento de dados na nuvem (cloud storage)</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-earth-americas"></i> Geografia e História
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Localização e limites</a></li>
+
+            <li><a href="#">Hidrografia</a></li>
+
+            <li><a href="#">População</a></li>
+
+            <li>
+              <a href="#"
+                >Aspectos políticos, administrativos, econômicos e culturais</a
+              >
+            </li>
+
+            <li><a href="#">Pontos turísticos</a></li>
+
+            <li><a href="#">Patrimônio cultural</a></li>
+
+            <li><a href="#">Clima e vegetação</a></li>
+
+            <li><a href="#">Ocupação geográfica</a></li>
+
+            <li><a href="#">História da cidade de Manaus</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#"><i class="fas fa-file-pen"></i> Teorias</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+      <div class="container">
+        <div id="pergunta" class="pergunta"></div>
+
+        <div id="alternativas"></div>
+
+        <button class="botao" onclick="verificar()">Responder</button>
+
+        <div id="resultado" class="resultado"></div>
+
+        <button class="botao" onclick="proxima()">Próxima questão</button>
+      </div>
+
+      <script src="./js/questoes.js"></script>
+    </main>
+
+    <footer class="footer">
+      <p>Siga nossas redes</p>
+
+      <div class="redes">
+        <a href="https://instagram.com/seu_instagram" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com/seu_facebook" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a href="https://youtube.com/seu_canal" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <p class="copy">SoQuestões 2026 ©</p>
+    </footer>
   </body>
 </html>
