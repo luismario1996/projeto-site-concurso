@@ -150,14 +150,8 @@ body {
 }
 
 /* SUBMENU */
-
-.submenu-list {
-  display: none;
-  background: #ffffff;
-}
-
-.submenu-list li a {
-  padding-left: 40px;
+ul.submenu-list {
+  padding: 0px;
 }
 
 /* OVERLAY */
