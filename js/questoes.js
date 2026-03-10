@@ -1,8 +1,4 @@
-function resetarEstatisticas() {
-  localStorage.removeItem("estatisticas");
-
-  location.reload();
-}
+let respondidas = JSON.parse(localStorage.getItem("respondidas")) || [];
 
 let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
   respondidas: 0,
@@ -14,12 +10,21 @@ let questoes = [];
 let atual = 0;
 let respostaUsuario = null;
 
+function resetarEstatisticas() {
+  localStorage.removeItem("estatisticas");
+  localStorage.removeItem("respondidas");
+
+  location.reload();
+}
+
 fetch("dados/questoes.json")
   .then((res) => res.json())
   .then((data) => {
     questoes = data.questoes;
 
     carregarQuestao();
+    mostrarEstatisticas();
+    atualizarGrafico();
   });
 
 function carregarQuestao() {
@@ -27,11 +32,20 @@ function carregarQuestao() {
 
   document.getElementById("pergunta").innerText = q.pergunta;
 
+  // STATUS DA QUESTÃO
+  if (respondidas.includes(q.id)) {
+    document.getElementById("statusQuestao").innerText =
+      "🟢 Você já respondeu esta questão";
+  } else {
+    document.getElementById("statusQuestao").innerText =
+      "⚪ Questão ainda não respondida";
+  }
+
   let altHTML = "";
 
   for (let letra in q.alternativas) {
     altHTML += `
-<div onclick="selecionar('${letra}', this)">
+<div onclick="selecionar('${letra}', this)" class="alternativa">
 ${letra.toUpperCase()}) ${q.alternativas[letra]}
 </div>
 `;
@@ -53,8 +67,14 @@ function selecionar(letra, elemento) {
 function verificar() {
   let q = questoes[atual];
 
-  // soma uma questão respondida
-  estatisticas.respondidas++;
+  // REGISTRAR QUESTÃO RESPONDIDA
+  if (!respondidas.includes(q.id)) {
+    respondidas.push(q.id);
+
+    localStorage.setItem("respondidas", JSON.stringify(respondidas));
+
+    estatisticas.respondidas++;
+  }
 
   if (respostaUsuario === q.correta) {
     estatisticas.acertos++;
@@ -66,10 +86,8 @@ function verificar() {
     document.getElementById("resultado").innerText = "❌ Resposta errada";
   }
 
-  // salva no navegador
   localStorage.setItem("estatisticas", JSON.stringify(estatisticas));
 
-  carregarQuestao();
   mostrarEstatisticas();
   atualizarGrafico();
 }
@@ -98,20 +116,23 @@ function mostrarEstatisticas() {
   }
 
   document.getElementById("estatisticas").innerHTML = `
-
 📊 Respondidas: ${estatisticas.respondidas} <br>
 ✅ Acertos: ${estatisticas.acertos} <br>
 ❌ Erros: ${estatisticas.erros} <br>
 🎯 Desempenho: ${porcentagem}%
-
 `;
 }
 
-mostrarEstatisticas();
 function atualizarGrafico() {
   let ctx = document.getElementById("graficoDesempenho");
 
-  new Chart(ctx, {
+  if (!ctx) return;
+
+  if (window.grafico) {
+    window.grafico.destroy();
+  }
+
+  window.grafico = new Chart(ctx, {
     type: "doughnut",
 
     data: {
