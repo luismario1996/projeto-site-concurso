@@ -554,3 +554,21 @@ a:active {
 
   display: block;
 }
+
+/* impedir rolagem da página quando menu estiver aberto */
+
+body.menu-aberto {
+  overflow: hidden;
+}
+
+/* melhorar scroll no celular */
+
+.menu {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* impedir efeito de arrastar fora do menu */
+
+.menu-list {
+  overscroll-behavior: contain;
+}
