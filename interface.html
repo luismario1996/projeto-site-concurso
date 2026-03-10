@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SoQuestões</title>
+    <link rel="shortcut icon" href="./img/logo (2).ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- icones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fffafa;
+      }
+
+      /* TOPO */
+
+      .topo {
+        display: flex;
+        align-items: center;
+
+        background: #07559b;
+        color: #ffffff;
+
+        padding: 14px;
+
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .topo h1 {
+        font-size: 20px;
+      }
+
+      /* BOTAO MENU */
+
+      .menu-btn {
+        background: none;
+        border: none;
+
+        font-size: 22px;
+
+        color: #ffffff;
+
+        cursor: pointer;
+
+        margin-right: 10px;
+      }
+
+      /* MENU */
+
+      .menu {
+        position: fixed;
+
+        top: 0;
+        left: -280px;
+
+        width: 280px;
+        height: 100%;
+
+        background: #ffffff;
+
+        box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+
+        transition: 0.3s;
+
+        z-index: 1000;
+
+        overflow-y: auto;
+      }
+
+      /* HAMBURGER */
+
+      .hamburger {
+        width: 24px;
+        height: 18px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hamburger span {
+        display: block;
+
+        height: 3px;
+        width: 100%;
+
+        background: #ffffff;
+
+        border-radius: 2px;
+
+        transition: 0.3s;
+      }
+
+      /* ANIMAÇÃO PARA X */
+
+      .hamburger.ativo span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.ativo span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.ativo span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* HEADER MENU */
+
+      .menu-top {
+        background: #07559b;
+
+        color: #ffffff;
+
+        text-align: center;
+
+        padding: 25px;
+      }
+
+      .avatar {
+        font-size: 40px;
+      }
+
+      /* LISTA */
+
+      .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-list li {
+        border-bottom: 1px solid #eee;
+      }
+
+      .menu-list a,
+      .submenu button {
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        width: 100%;
+
+        padding: 14px;
+
+        text-decoration: none;
+
+        color: #000000;
+
+        font-size: 15px;
+
+        background: none;
+        border: none;
+
+        cursor: pointer;
+      }
+
+      /* SUBMENU */
+
+      .submenu-list {
+        display: none;
+        background: #ffffff;
+      }
+
+      .submenu-list li a {
+        padding-left: 40px;
+      }
+
+      /* OVERLAY */
+
+      #overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.4);
+
+        display: none;
+
+        z-index: 900;
+      }
+
+      /* CONTEUDO */
+
+      main {
+        margin-top: 10px;
+        padding: 20px;
+      }
+
+      .slide {
+        width: 100%;
+        display: none;
+      }
+
+      .slide.active {
+        display: block;
+      }
+
+      /* FOOTER */
+
+      .footer {
+        background: #07559b;
+
+        color: #ffffff;
+
+        text-align: center;
+
+        padding: 25px;
+
+        margin-top: 40px;
+      }
+
+      .redes a {
+        color: #ffffff;
+
+        font-size: 24px;
+
+        margin: 0 10px;
+
+        transition: 0.2s;
+      }
+
+      .menu-btn:hover {
+        opacity: 0.8;
+      }
+
+      .redes a:hover {
+        opacity: 0.7;
+      }
+
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .menu-list a:hover,
+      .submenu button:hover {
+        background: #ffffff;
+      }
+
+      .menu-btn {
+        background: none;
+        border: none;
+
+        font-size: 22px;
+
+        color: #ffffff;
+
+        cursor: pointer;
+
+        margin-right: 10px;
+
+        outline: none;
+      }
+
+      /* remover hover vermelho */
+
+      .menu-btn:hover {
+        background: none;
+        color: #ffffff;
+      }
+
+      .menu-btn:focus {
+        outline: none;
+        background: none;
+      }
+
+      .menu-btn:active {
+        background: none;
+        color: #ffffff;
+      }
+
+      /* remover cores padrão dos links */
+
+      .menu-list a,
+      .submenu-list a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      /* quando link já foi visitado */
+
+      .menu-list a:visited,
+      .submenu-list a:visited {
+        color: #000;
+      }
+
+      /* quando clicar */
+
+      .menu-list a:active,
+      .submenu-list a:active {
+        background: #ffffff;
+        color: #07559b;
+      }
+
+      /* quando focado */
+
+      .menu-list a:focus,
+      .submenu-list a:focus {
+        outline: none;
+        background: #e6f0ff;
+      }
+
+      /* hover suave */
+
+      .menu-list a:hover,
+      .submenu-list a:hover {
+        background: #e6f0ff;
+      }
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* remover cores padrão dos links */
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* itens do menu */
+
+      .menu-list a,
+      .submenu button,
+      .submenu-list a {
+        color: #000;
+        background: none;
+      }
+
+      /* hover */
+
+      .menu-list a:hover,
+      .submenu button:hover,
+      .submenu-list a:hover {
+        background: #e6f0ff;
+        color: #07559b;
+      }
+
+      /* clique */
+
+      .menu-list a:active,
+      .submenu button:active,
+      .submenu-list a:active {
+        background: #d6e6ff;
+        color: #07559b;
+      }
+
+      /* foco */
+
+      .menu-list a:focus,
+      .submenu button:focus,
+      .submenu-list a:focus {
+        outline: none;
+        background: #e6f0ff;
+      }
+
+      /* remover highlight vermelho do mobile */
+
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button:focus,
+      button:active,
+      a:focus,
+      a:active {
+        outline: none;
+        box-shadow: none;
+      }
+
+      /* MENU DE CATEGORIAS */
+
+      .menu-categorias {
+        display: flex;
+
+        gap: 20px;
+
+        padding: 20px;
+
+        background: #ffffff;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* esconder barra */
+
+      .menu-categorias::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* links */
+
+      .menu-categorias a {
+        flex: 0 0 auto;
+
+        text-decoration: none;
+
+        color: #07559b;
+
+        font-weight: 600;
+
+        font-size: 14px;
+
+        padding-bottom: 6px;
+      }
+
+      /* hover */
+
+      .menu-categorias a:hover {
+        border-bottom: 3px solid #07559b;
+      }
+
+      @media (max-width: 768px) {
+        main {
+          padding: 0;
+        }
+
+        .banner {
+          margin: 5px;
+          border-radius: 10px;
+        }
+      }
+
+      /* SEÇÕES DE CARREIRAS */
+
+      .secao-carreiras {
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 5px;
+      }
+
+      .card-carreira {
+        background: #fff;
+
+        border-radius: 12px;
+
+        overflow: hidden;
+
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+        margin-bottom: 25px;
+      }
+
+      /* imagem */
+
+      .card-carreira img {
+        width: 100%;
+
+        height: auto;
+
+        display: block;
+      }
+
+      /* texto */
+
+      .carreira-texto {
+        padding: 15px;
+      }
+
+      .carreira-texto h2 {
+        margin: 0;
+
+        color: #07559b;
+
+        font-size: 20px;
+      }
+
+      .carreira-texto h3 {
+        margin: 6px 0;
+
+        font-size: 15px;
+
+        color: #444;
+
+        font-weight: 600;
+      }
+
+      .carreira-texto p {
+        font-size: 14px;
+
+        color: #555;
+
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="topo">
+      <button class="menu-btn" onclick="toggleMenu()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <img width="150" src="./img/logo-branca.png" alt="" />
+    </header>
+
+    <nav class="menu-categorias">
+      <a href="#">Língua Portuguesa</a>
+
+      <a href="#">Direito</a>
+
+      <a href="#">Informática</a>
+
+      <a href="#">Geografia e História</a>
+    </nav>
+
+    <!-- MENU LATERAL -->
+
+    <nav id="menu" class="menu">
+      <div class="menu-top">
+        <div class="avatar">
+          <i class="fas fa-user"></i>
+        </div>
+
+        <img width="150px" src="./img/logo-branca.png" alt="" />
+      </div>
+
+      <ul class="menu-list">
+        <li>
+          <a href="#"> <i class="fas fa-home"></i> Início </a>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-book"></i> Língua Portuguesa
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li>
+              <a href="questoes.html">Compreensão e interpretação de textos</a>
+            </li>
+
+            <li><a href="#">Tipologia textual</a></li>
+
+            <li><a href="#">Ortografia oficial</a></li>
+
+            <li><a href="#">Acentuação gráfica</a></li>
+
+            <li><a href="#">Emprego das classes de palavras</a></li>
+
+            <li><a href="#">Emprego do sinal indicativo de crase</a></li>
+
+            <li><a href="#">Sintaxe da oração e do período</a></li>
+
+            <li><a href="#">Pontuação</a></li>
+
+            <li><a href="#">Concordância nominal e verbal</a></li>
+
+            <li><a href="#">Regência nominal e verbal</a></li>
+
+            <li><a href="#">Significação das palavras</a></li>
+
+            <li>
+              <a href="#"> Redação oficial </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-scale-balanced"></i> Direito
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Direitos Humanos</a></li>
+
+            <li><a href="#">Direito Administrativo</a></li>
+
+            <li><a href="#">Direito Constitucional</a></li>
+
+            <li><a href="#">Direito Penal</a></li>
+
+            <li><a href="#">Direito Processual Penal</a></li>
+
+            <li><a href="#">Legislação</a></li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-computer"></i> Informática
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Noções de sistema operacional (Windows)</a></li>
+
+            <li>
+              <a href="#"
+                >Edição de textos, planilhas e apresentações (Microsoft Office
+                365)</a
+              >
+            </li>
+
+            <li><a href="#">Redes de computadores</a></li>
+
+            <li><a href="#">Conceitos básicos de Internet e Intranet</a></li>
+
+            <li>
+              <a href="#"
+                >Programas de navegação (Internet Explorer, Firefox e Chrome)</a
+              >
+            </li>
+
+            <li>
+              <a href="#"
+                >Programas de correio eletrônico (Outlook e Thunderbird)</a
+              >
+            </li>
+
+            <li><a href="#">Sítios de busca e pesquisa na Internet</a></li>
+
+            <li><a href="#">Grupos de discussão</a></li>
+
+            <li><a href="#">Redes sociais</a></li>
+
+            <li><a href="#">Computação na nuvem (Cloud Computing)</a></li>
+
+            <li>
+              <a href="#">Organização e gerenciamento de arquivos e pastas</a>
+            </li>
+
+            <li><a href="#">Segurança da informação</a></li>
+
+            <li><a href="#">Procedimentos de segurança</a></li>
+
+            <li><a href="#">Vírus, worms e pragas virtuais</a></li>
+
+            <li>
+              <a href="#"
+                >Aplicativos de segurança (antivírus, firewall, anti-spyware)</a
+              >
+            </li>
+
+            <li><a href="#">Procedimentos de backup</a></li>
+
+            <li>
+              <a href="#">Armazenamento de dados na nuvem (cloud storage)</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <button onclick="toggleSubmenu(this)">
+            <i class="fas fa-earth-americas"></i> Geografia e História
+            <i class="fas fa-chevron-down seta"></i>
+          </button>
+
+          <ul class="submenu-list">
+            <li><a href="#">Localização e limites</a></li>
+
+            <li><a href="#">Hidrografia</a></li>
+
+            <li><a href="#">População</a></li>
+
+            <li>
+              <a href="#"
+                >Aspectos políticos, administrativos, econômicos e culturais</a
+              >
+            </li>
+
+            <li><a href="#">Pontos turísticos</a></li>
+
+            <li><a href="#">Patrimônio cultural</a></li>
+
+            <li><a href="#">Clima e vegetação</a></li>
+
+            <li><a href="#">Ocupação geográfica</a></li>
+
+            <li><a href="#">História da cidade de Manaus</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#"><i class="fas fa-file-pen"></i> Teorias</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+      <!-- SEÇÕES DE CARREIRAS -->
+
+      <section class="secao-carreiras">
+        <!-- CARREIRAS POLICIAIS -->
+
+        <div class="card-carreira">
+          <div class="carreira-texto">
+            <h2>Carreiras Policiais</h2>
+            <img src="img/carreirapolicial.png" alt="Carreiras Policiais" />
+            <h3>Concursos na área de segurança pública</h3>
+
+            <p>
+              Prepare-se para concursos das polícias civil, militar, federal,
+              penal e rodoviária. Treine com milhares de questões atualizadas e
+              organize seus estudos para conquistar sua vaga.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARREIRAS DA SAÚDE -->
+
+        <div class="card-carreira">
+          <div class="carreira-texto">
+            <h2>Carreiras da Saúde</h2>
+            <img src="img/carreirasaude.png" alt="Carreiras da Saúde" />
+            <h3>Concursos na área da saúde pública</h3>
+
+            <p>
+              Estude para concursos de enfermagem, medicina, técnicos de saúde e
+              outras áreas. Tenha acesso a questões comentadas e conteúdos
+              direcionados para sua aprovação.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARREIRAS JURÍDICAS -->
+
+        <div class="card-carreira">
+          <div class="carreira-texto">
+            <h2>Carreiras Jurídicas</h2>
+            <img src="img/carreirajuridica.png" alt="Carreiras Jurídicas" />
+            <h3>Concursos da área do direito</h3>
+
+            <p>
+              Prepare-se para concursos de tribunais, ministério público,
+              defensorias e outras carreiras jurídicas. Pratique com questões
+              organizadas por assunto e aumente sua performance nas provas.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleMenu() {
+        let menu = document.getElementById("menu");
+        let overlay = document.getElementById("overlay");
+        let hamburger = document.querySelector(".hamburger");
+
+        if (menu.style.left === "0px") {
+          menu.style.left = "-280px";
+          overlay.style.display = "none";
+
+          hamburger.classList.remove("ativo");
+        } else {
+          menu.style.left = "0";
+          overlay.style.display = "block";
+
+          hamburger.classList.add("ativo");
+        }
+      }
+
+      function toggleSubmenu(botao) {
+        let lista = botao.nextElementSibling;
+
+        if (lista.style.display === "block") {
+          lista.style.display = "none";
+        } else {
+          lista.style.display = "block";
+        }
+      }
+    </script>
+
+    <footer class="footer">
+      <p>Siga nossas redes</p>
+
+      <div class="redes">
+        <a href="https://instagram.com/seu_instagram" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com/seu_facebook" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a href="https://youtube.com/seu_canal" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+
+      <p class="copy">SoQuestões 2026 ©</p>
+    </footer>
+  </body>
+</html>

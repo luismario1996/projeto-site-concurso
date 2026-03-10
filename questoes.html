@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Resolver Questões</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .container {
+        max-width: 700px;
+
+        margin: auto;
+
+        padding: 20px;
+      }
+
+      .pergunta {
+        font-size: 20px;
+
+        margin-bottom: 20px;
+      }
+
+      .alternativa {
+        display: block;
+
+        padding: 12px;
+
+        margin-bottom: 10px;
+
+        border: 1px solid #ddd;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+      }
+
+      .alternativa:hover {
+        background: #f0f6ff;
+      }
+
+      .botao {
+        background: #07559b;
+
+        color: white;
+
+        border: none;
+
+        padding: 12px;
+
+        width: 100%;
+
+        border-radius: 8px;
+
+        font-size: 16px;
+
+        margin-top: 20px;
+
+        cursor: pointer;
+      }
+
+      .resultado {
+        margin-top: 20px;
+
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="pergunta" class="pergunta"></div>
+
+      <div id="alternativas"></div>
+
+      <button class="botao" onclick="verificar()">Responder</button>
+
+      <div id="resultado" class="resultado"></div>
+
+      <button class="botao" onclick="proxima()">Próxima questão</button>
+    </div>
+
+    <script>
+      let questoes = [];
+      let atual = 0;
+      let respostaUsuario = null;
+
+      fetch("dados/questoes.json")
+        .then((res) => res.json())
+        .then((data) => {
+          questoes = data.questoes;
+
+          carregarQuestao();
+        });
+
+      function carregarQuestao() {
+        let q = questoes[atual];
+
+        document.getElementById("pergunta").innerText = q.pergunta;
+
+        let altHTML = "";
+
+        for (let letra in q.alternativas) {
+          altHTML += `
+<div class="alternativa" onclick="selecionar('${letra}', this)">
+${letra.toUpperCase()}) ${q.alternativas[letra]}
+</div>
+`;
+        }
+
+        document.getElementById("alternativas").innerHTML = altHTML;
+
+        document.getElementById("resultado").innerText = "";
+      }
+
+      function selecionar(letra, elemento) {
+        respostaUsuario = letra;
+
+        document
+          .querySelectorAll(".alternativa")
+          .forEach((el) => (el.style.background = "white"));
+
+        elemento.style.background = "#d6e6ff";
+      }
+
+      function verificar() {
+        let q = questoes[atual];
+
+        if (respostaUsuario === q.correta) {
+          document.getElementById("resultado").innerText =
+            "✅ Resposta correta";
+        } else {
+          document.getElementById("resultado").innerText = "❌ Resposta errada";
+        }
+      }
+
+      function proxima() {
+        atual++;
+
+        if (atual >= questoes.length) {
+          atual = 0;
+        }
+
+        respostaUsuario = null;
+
+        carregarQuestao();
+      }
+    </script>
+  </body>
+</html>
