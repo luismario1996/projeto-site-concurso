@@ -484,3 +484,63 @@ a:active {
 
   line-height: 1.5;
 }
+
+/* formatacao da pagina de questoes*/
+
+.container {
+  max-width: 700px;
+
+  margin: auto;
+
+  padding: 20px;
+}
+
+.pergunta {
+  font-size: 20px;
+
+  margin-bottom: 20px;
+}
+
+.alternativa {
+  display: block;
+
+  padding: 12px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.alternativa:hover {
+  background: #f0f6ff;
+}
+
+.botao {
+  background: #07559b;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px;
+
+  width: 100%;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  margin-top: 20px;
+
+  cursor: pointer;
+}
+
+.resultado {
+  margin-top: 20px;
+
+  font-weight: bold;
+}
