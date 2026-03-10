@@ -1,0 +1,31 @@
+{
+  "questoes": [
+    {
+      "id": 1,
+      "tema": "Língua Portuguesa",
+      "subtema": "Compreensão e interpretação de textos",
+      "pergunta": "Qual é o principal objetivo de um texto dissertativo?",
+      "alternativas": {
+        "a": "Narrar uma história",
+        "b": "Defender uma ideia",
+        "c": "Descrever um lugar",
+        "d": "Contar um fato"
+      },
+      "correta": "b"
+    },
+
+    {
+      "id": 2,
+      "tema": "Informática",
+      "subtema": "Segurança da informação",
+      "pergunta": "Qual programa protege o computador contra vírus?",
+      "alternativas": {
+        "a": "Word",
+        "b": "Excel",
+        "c": "Antivírus",
+        "d": "PowerPoint"
+      },
+      "correta": "c"
+    }
+  ]
+}
