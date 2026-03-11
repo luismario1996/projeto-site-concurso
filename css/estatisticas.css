@@ -1,0 +1,27 @@
+.painel-estatisticas {
+  grid-area: estatisticas;
+}
+
+#graficoDesempenho {
+  max-width: 300px;
+  margin: 30px auto;
+}
+
+.btn-numero {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  background: #ecf0f3;
+  cursor: pointer;
+}
+
+.questao-acerto {
+  background: #2ecc71 !important;
+  color: white;
+}
+
+.questao-erro {
+  background: #e74c3c !important;
+  color: white;
+}

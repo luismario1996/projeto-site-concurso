@@ -1,6 +1,7 @@
 let respostas = JSON.parse(localStorage.getItem("respostas")) || {};
 let favoritas = JSON.parse(localStorage.getItem("favoritas")) || [];
 let respondidas = JSON.parse(localStorage.getItem("respondidas")) || [];
+
 let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
   respondidas: 0,
   acertos: 0,
@@ -13,345 +14,231 @@ let questoesFiltradas = [];
 let atual = 0;
 let respostaUsuario = null;
 
-function resetarEstatisticas() {
-  localStorage.removeItem("estatisticas");
-
-  localStorage.removeItem("respondidas");
-
-  localStorage.removeItem("respostas");
-
-  location.reload();
-}
-
-fetch("dados/questoes.json")
+fetch("./dados/questoes.json")
   .then((res) => res.json())
   .then((data) => {
     questoes = data.questoes;
-
-    questoesFiltradas = questoes;
+    questoesFiltradas = [...questoes];
 
     carregarFiltros();
     criarNavegacao();
-
     carregarQuestao();
-    mostrarEstatisticas();
     atualizarGrafico();
   });
 
-function carregarFiltros() {
-  let materias = new Set();
-  let assuntos = new Set();
-  let bancas = new Set();
-  let anos = new Set();
-
-  questoes.forEach((q) => {
-    if (q.materia) materias.add(q.materia);
-    if (q.assunto) assuntos.add(q.assunto);
-    if (q.banca) bancas.add(q.banca);
-    if (q.ano) anos.add(q.ano);
-  });
-
-  preencherSelect("filtroMateria", materias);
-  preencherSelect("filtroAssunto", assuntos);
-  preencherSelect("filtroBanca", bancas);
-  preencherSelect("filtroAno", anos);
-}
-
-function preencherSelect(id, valores) {
-  let select = document.getElementById(id);
-
-  valores.forEach((valor) => {
-    let option = document.createElement("option");
-
-    option.value = valor;
-
-    option.textContent = valor;
-
-    select.appendChild(option);
-  });
-}
-
-function carregarAssuntos() {
-  let select = document.getElementById("filtroAssunto");
-
-  if (!select) return;
-
-  let assuntos = new Set();
-
-  questoes.forEach((q) => {
-    if (q.assunto) {
-      assuntos.add(q.assunto);
-    }
-  });
-
-  assuntos.forEach((assunto) => {
-    let option = document.createElement("option");
-
-    option.value = assunto;
-
-    option.textContent = assunto;
-
-    select.appendChild(option);
-  });
-}
-
-function filtrarQuestoes() {
-  let materia = document.getElementById("filtroMateria").value;
-  let assunto = document.getElementById("filtroAssunto").value;
-  let banca = document.getElementById("filtroBanca").value;
-  let ano = document.getElementById("filtroAno").value;
-  let revisao = document.getElementById("filtroRevisao").value;
-
-  questoesFiltradas = questoes.filter((q) => {
-    if (materia && q.materia !== materia) return false;
-
-    if (assunto && q.assunto !== assunto) return false;
-
-    if (banca && q.banca !== banca) return false;
-
-    if (ano && q.ano != ano) return false;
-
-    // FILTRO DE REVISÃO
-
-    if (revisao === "erro" && respostas[q.id] !== "erro") return false;
-
-    if (revisao === "acerto" && respostas[q.id] !== "acerto") return false;
-
-    if (revisao === "nao" && respostas[q.id]) return false;
-
-    if (revisao === "favorita" && !favoritas.includes(q.id)) return false;
-
-    return true;
-  });
-
-  atual = 0;
-
-  criarNavegacao();
-
-  carregarQuestao();
-}
+/* ============================= */
+/* CARREGAR QUESTÃO */
+/* ============================= */
 
 function carregarQuestao() {
-  let q = questoesFiltradas[atual];
-
-  if (!q) return;
-
-  document.getElementById("pergunta").innerText = q.pergunta;
-
-  atualizarContador();
-
-  if (respondidas.includes(q.id)) {
-    document.getElementById("statusQuestao").innerText =
-      "🟢 Você já respondeu esta questão";
-  } else {
-    document.getElementById("statusQuestao").innerText =
-      "⚪ Questão ainda não respondida";
-  }
-
-  let altHTML = "";
-
-  for (let letra in q.alternativas) {
-    altHTML += `
-<div onclick="selecionar('${letra}', this)" class="alternativa">
-${letra.toUpperCase()}) ${q.alternativas[letra]}
-</div>
-`;
-  }
-
-  document.getElementById("alternativas").innerHTML = altHTML;
-}
-
-function selecionar(letra, elemento) {
-  respostaUsuario = letra;
-
-  document
-    .querySelectorAll("#alternativas div")
-    .forEach((el) => (el.style.background = "white"));
-
-  elemento.style.background = "#d6e6ff";
-}
-
-function verificar() {
-  if (respostaUsuario === null) {
-    alert("Selecione uma alternativa");
-
-    return;
-  }
-
-  let q = questoesFiltradas[atual];
-
-  if (!q) return;
-
-  // REGISTRAR QUESTÃO RESPONDIDA
-  if (!respondidas.includes(q.id)) {
-    respondidas.push(q.id);
-
-    localStorage.setItem("respondidas", JSON.stringify(respondidas));
-
-    estatisticas.respondidas++;
-  }
-
-  if (respostaUsuario === q.correta) {
-    estatisticas.acertos++;
-
-    respostas[q.id] = "acerto";
-
-    document.getElementById("resultado").innerText = "✅ Resposta correta";
-  } else {
-    estatisticas.erros++;
-
-    respostas[q.id] = "erro";
-
-    document.getElementById("resultado").innerText = "❌ Resposta errada";
-  }
-  localStorage.setItem("respostas", JSON.stringify(respostas));
-
-  localStorage.setItem("estatisticas", JSON.stringify(estatisticas));
-
-  mostrarEstatisticas();
-  atualizarGrafico();
-  criarNavegacao();
-}
-
-function anterior() {
-  atual--;
-
-  if (atual < 0) {
-    atual = questoesFiltradas.length - 1;
-  }
-
-  respostaUsuario = null;
-
-  document.getElementById("resultado").innerText = "";
-
-  carregarQuestao();
-}
-
-function proxima() {
-  atual++;
-
-  if (atual >= questoesFiltradas.length) {
-    atual = 0;
-  }
-
-  respostaUsuario = null;
-
-  document.getElementById("resultado").innerText = "";
-
-  carregarQuestao();
-}
-
-function mostrarEstatisticas() {
-  let porcentagem = 0;
-
-  if (estatisticas.respondidas > 0) {
-    porcentagem = Math.round(
-      (estatisticas.acertos / estatisticas.respondidas) * 100,
-    );
-  }
-
-  document.getElementById("estatisticas").innerHTML = `
-📊 Respondidas: ${estatisticas.respondidas} <br>
-✅ Acertos: ${estatisticas.acertos} <br>
-❌ Erros: ${estatisticas.erros} <br>
-🎯 Desempenho: ${porcentagem}%
-`;
-}
-
-function atualizarContador() {
-  let total = questoesFiltradas.length;
-
-  let numero = atual + 1;
-
-  document.getElementById("contadorQuestoes").innerText =
-    `Questão ${numero} de ${total}`;
-}
-
-function atualizarGrafico() {
-  let ctx = document.getElementById("graficoDesempenho");
-
-  if (!ctx) return;
-
-  if (window.grafico) {
-    window.grafico.destroy();
-  }
-
-  window.grafico = new Chart(ctx, {
-    type: "doughnut",
-
-    data: {
-      labels: ["Acertos", "Erros"],
-
-      datasets: [
-        {
-          data: [estatisticas.acertos, estatisticas.erros],
-
-          backgroundColor: ["#2ecc71", "#e74c3c"],
-        },
-      ],
-    },
-
-    options: {
-      responsive: true,
-
-      plugins: {
-        legend: {
-          position: "bottom",
-        },
-      },
-    },
-  });
-}
-
-function criarNavegacao() {
-  let container = document.getElementById("navegacaoQuestoes");
-
-  if (!container) return;
-
+  let container = document.getElementById("listaQuestoes");
   container.innerHTML = "";
 
   questoesFiltradas.forEach((q, index) => {
-    let botao = document.createElement("button");
+    let div = document.createElement("div");
+    div.className = "questao";
 
-    botao.innerText = index + 1;
+    let alternativasHTML = "";
 
-    botao.classList.add("btn-numero");
-
-    if (respostas[q.id] === "acerto") {
-      botao.classList.add("questao-acerto");
-    } else if (respostas[q.id] === "erro") {
-      botao.classList.add("questao-erro");
+    for (let letra in q.alternativas) {
+      alternativasHTML += `
+        <label class="alternativa">
+          <input type="radio" name="q${q.id}" value="${letra}">
+          ${letra.toUpperCase()}) ${q.alternativas[letra]}
+        </label>
+      `;
     }
 
-    if (index === atual) {
-      botao.style.border = "2px solid #000";
-    }
+    div.innerHTML = `
+  <h3>Questão ${index + 1}</h3>
 
-    botao.onclick = function () {
-      atual = index;
+  <p>${q.pergunta}</p>
 
-      respostaUsuario = null;
+  <div class="alternativas">
+    ${alternativasHTML}
+  </div>
 
-      document.getElementById("resultado").innerText = "";
+  <button onclick="verificar(${q.id}, '${q.correta}')">
+    Responder
+  </button>
 
-      carregarQuestao();
-    };
+  <div id="resultado${q.id}" class="resultado"></div>
 
-    container.appendChild(botao);
+  <hr class="linha-acoes">
+
+  <div class="acoes-questao">
+
+    <button onclick="toggleEstatisticas(${q.id})">
+      📊 Estatísticas
+    </button>
+
+    <button onclick="notificarErro(${q.id})">
+      ⚠️ Notificar erro
+    </button>
+
+    <button onclick="toggleComentarios(${q.id})">
+      💬 Comentários
+    </button>
+
+  </div>
+
+  <div id="estatisticas${q.id}" class="painel-extra"></div>
+
+  <div id="comentarios${q.id}" class="painel-extra"></div>
+`;
+
+    container.appendChild(div);
   });
 }
-function favoritarQuestao() {
-  let q = questoesFiltradas[atual];
 
-  if (!q) return;
+/* ============================= */
+/* VERIFICAR RESPOSTA */
+/* ============================= */
 
-  if (favoritas.includes(q.id)) {
-    favoritas = favoritas.filter((id) => id !== q.id);
+function verificar(id, correta) {
+  let selecionada = document.querySelector(`input[name="q${id}"]:checked`);
+
+  if (!selecionada) {
+    alert("Escolha uma alternativa");
+    return;
+  }
+
+  let resposta = selecionada.value;
+
+  let resultado = document.getElementById("resultado" + id);
+
+  if (resposta === correta) {
+    resultado.innerHTML = "✅ Correta";
+
+    estatisticas.acertos++;
   } else {
-    favoritas.push(q.id);
+    resultado.innerHTML = "❌ Errado. Correta: " + correta.toUpperCase();
+
+    estatisticas.erros++;
+  }
+
+  estatisticas.respondidas++;
+
+  localStorage.setItem("estatisticas", JSON.stringify(estatisticas));
+
+  atualizarGrafico();
+}
+
+/* ============================= */
+/* NAVEGAÇÃO */
+/* ============================= */
+
+function proxima() {
+  if (atual < questoesFiltradas.length - 1) {
+    atual++;
+    carregarQuestao();
+  }
+}
+
+function anterior() {
+  if (atual > 0) {
+    atual--;
+    carregarQuestao();
+  }
+}
+
+/* ============================= */
+/* FAVORITAR */
+/* ============================= */
+
+function favoritarQuestao() {
+  let id = questoesFiltradas[atual].id;
+
+  if (!favoritas.includes(id)) {
+    favoritas.push(id);
+  } else {
+    favoritas = favoritas.filter((f) => f !== id);
   }
 
   localStorage.setItem("favoritas", JSON.stringify(favoritas));
 
   alert("Favorito atualizado ⭐");
+}
+
+/* ============================= */
+/* NAVEGAÇÃO RÁPIDA */
+/* ============================= */
+
+function criarNavegacao() {
+  let nav = document.getElementById("navegacaoQuestoes");
+  nav.innerHTML = "";
+
+  questoesFiltradas.forEach((q, index) => {
+    let btn = document.createElement("button");
+
+    btn.innerText = index + 1;
+
+    btn.onclick = () => {
+      atual = index;
+      carregarQuestao();
+    };
+
+    nav.appendChild(btn);
+  });
+}
+
+function toggleEstatisticas(id) {
+  let div = document.getElementById("estatisticas" + id);
+
+  if (div.innerHTML !== "") {
+    div.innerHTML = "";
+    return;
+  }
+
+  div.innerHTML = `
+    <p>📊 Total respondidas: ${estatisticas.respondidas}</p>
+    <p>✅ Acertos: ${estatisticas.acertos}</p>
+    <p>❌ Erros: ${estatisticas.erros}</p>
+  `;
+}
+
+function notificarErro(id) {
+  alert("Obrigado! O erro da questão " + id + " foi reportado.");
+}
+
+function toggleComentarios(id) {
+  let div = document.getElementById("comentarios" + id);
+
+  if (div.innerHTML !== "") {
+    div.innerHTML = "";
+    return;
+  }
+
+  let comentarios = JSON.parse(localStorage.getItem("comentarios_" + id)) || [];
+
+  let lista = comentarios.map((c) => `<p>💬 ${c}</p>`).join("");
+
+  div.innerHTML = `
+    <div class="comentarios-box">
+
+      ${lista}
+
+      <textarea id="novoComentario${id}" placeholder="Escreva um comentário"></textarea>
+
+      <button onclick="enviarComentario(${id})">
+        Enviar comentário
+      </button>
+
+    </div>
+  `;
+}
+
+function enviarComentario(id) {
+  let textarea = document.getElementById("novoComentario" + id);
+
+  if (!textarea.value.trim()) return;
+
+  let comentarios = JSON.parse(localStorage.getItem("comentarios_" + id)) || [];
+
+  comentarios.push(textarea.value);
+
+  localStorage.setItem("comentarios_" + id, JSON.stringify(comentarios));
+
+  toggleComentarios(id);
+  toggleComentarios(id);
 }

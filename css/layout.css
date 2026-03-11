@@ -1,0 +1,126 @@
+main {
+  margin-top: 10px;
+  padding: 20px;
+  margin: auto;
+  max-width: 1300px;
+}
+
+.footer {
+  background: #4a6cf7;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.redes a {
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+body.menu-aberto {
+  overflow: hidden;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+/* --- Footer Geral --- */
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #4a6cf7;
+  color: #fff;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Logo --- */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* --- Redes Sociais --- */
+.footer-socials a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-socials a:hover {
+  color: #00aaff;
+}
+
+.footer-search button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00aaff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.footer-search button:hover {
+  background-color: #0088cc;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+/* --- Sobre Nós --- */
+.footer-right h3 {
+  margin-bottom: 10px;
+}
+
+.footer-right p {
+  line-height: 1.5;
+  border: 1px solid #ffffff50;
+  text-align: justify;
+  max-width: 350px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* --- Responsividade --- */
+@media screen and (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 500px;
+  }
+
+  .footer-socials a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .footer-search {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-search input {
+    width: 100%;
+  }
+
+  .footer-search button {
+    width: 100%;
+  }
+}

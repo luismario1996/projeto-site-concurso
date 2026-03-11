@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SoQuestões</title>
-    <link rel="shortcut icon" href="./img/logo (2).ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./img/focoazul.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/busca.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/questoes.css" />
+    <link rel="stylesheet" href="./css/estatisticas.css" />
 
     <!-- icones -->
     <link
@@ -24,18 +30,18 @@
         </div>
       </button>
 
-      <a href="index.html"><img src="./img/logo-branca200px.png" alt="" /></a>
+      <a href="index.html">
+        <img width="90px" src="./img/focoquestao200.png" alt="" />
+      </a>
+
+      <div class="barra-busca">
+        <input type="text" id="buscarQuestoes" placeholder="" />
+
+        <button onclick="buscarQuestoes()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </header>
-
-    <nav class="menu-categorias">
-      <a href="#">Língua Portuguesa</a>
-
-      <a href="#">Direito</a>
-
-      <a href="#">Informática</a>
-
-      <a href="#">Geografia e História</a>
-    </nav>
 
     <!-- MENU LATERAL -->
 
@@ -46,7 +52,7 @@
         </div>
 
         <a href="index.html"
-          ><img src="./img/logo-branca200px.png" alt="so questões"
+          ><img src="./img/focoquestao200.png" alt="so questões"
         /></a>
       </div>
 
@@ -220,89 +226,95 @@
 
     <main>
       <div class="container">
-        <section class="filtros">
+        <!-- FILTROS -->
+        <section class="painel-filtros">
           <h3>Filtrar Questões</h3>
 
-          <select id="filtroMateria">
-            <option value="">Matéria</option>
-          </select>
+          <div class="grupo-filtros">
+            <select id="filtroMateria">
+              <option value="">Matéria</option>
+            </select>
 
-          <select id="filtroAssunto">
-            <option value="">Assunto</option>
-          </select>
+            <select id="filtroAssunto">
+              <option value="">Assunto</option>
+            </select>
 
-          <select id="filtroBanca">
-            <option value="">Banca</option>
-          </select>
+            <select id="filtroBanca">
+              <option value="">Banca</option>
+            </select>
 
-          <select id="filtroAno">
-            <option value="">Ano</option>
-          </select>
+            <select id="filtroAno">
+              <option value="">Ano</option>
+            </select>
 
-          <select id="filtroRevisao" onchange="filtrarQuestoes()">
-            <option value="">Todas</option>
+            <select id="filtroRevisao" onchange="filtrarQuestoes()">
+              <option value="">Todas</option>
+              <option value="erro">Apenas erradas</option>
+              <option value="acerto">Apenas acertadas</option>
+              <option value="nao">Não respondidas</option>
+              <option value="favorita">Favoritas</option>
+            </select>
 
-            <option value="erro">Apenas erradas</option>
-
-            <option value="acerto">Apenas acertadas</option>
-
-            <option value="nao">Não respondidas</option>
-            <option value="favorita">Favoritas</option>
-          </select>
-
-          <button onclick="filtrarQuestoes()">Aplicar Filtro</button>
+            <button onclick="filtrarQuestoes()">Aplicar Filtro</button>
+          </div>
         </section>
 
-        <div id="statusQuestao"></div>
-        <br />
+        <!-- ÁREA DA QUESTÃO -->
+        <section class="area-questao">
+          <div id="listaQuestoes"></div>
+        </section>
 
-        <div id="contadorQuestoes" class="contador"></div>
+        <!-- NAVEGAÇÃO RÁPIDA -->
+        <section class="painel-navegacao">
+          <h3>Navegação rápida</h3>
 
-        <div id="pergunta" class="pergunta"></div>
-        <button onclick="favoritarQuestao()">⭐ Favoritar</button>
+          <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
+        </section>
+      </div>
+    </main>
 
-        <div id="alternativas"></div>
-        <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
+    <footer class="site-footer">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img width="90px" src="./img/focoquestao200.png" alt="" />
+        </div>
+        <div class="redes">
+          <a href="https://instagram.com/seu_instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
 
-        <button class="botao" onclick="verificar()">Responder</button>
+          <a href="https://facebook.com/seu_facebook" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
 
-        <div id="resultado" class="resultado"></div>
+          <a href="https://youtube.com/seu_canal" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <div class="barra-busca">
+          <input type="text" id="buscarQuestoes" placeholder="" />
 
-        <canvas id="graficoDesempenho"></canvas>
-
-        <div id="estatisticas"></div>
-
-        <div class="navegacao">
-          <button class="botao" onclick="anterior()">◀ Anterior</button>
-
-          <button class="botao" onclick="proxima()">Próxima ▶</button>
+          <button onclick="buscarQuestoes()">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
       </div>
 
-      <button onclick="resetarEstatisticas()">Resetar desempenho</button>
-    </main>
-
-    <footer class="footer">
-      <p>Siga nossas redes</p>
-
-      <div class="redes">
-        <a href="https://instagram.com/seu_instagram" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://facebook.com/seu_facebook" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-
-        <a href="https://youtube.com/seu_canal" target="_blank">
-          <i class="fab fa-youtube"></i>
-        </a>
+      <div class="footer-right">
+        <h3>Sobre Nós</h3>
+        <p>
+          Somos um site focado em prática de questões de concursos público.<br />
+          Treino, Persistência, Foco e Resiliência são o que formam o futuro
+          servidor público.
+        </p>
       </div>
-
-      <p class="copy">SoQuestões 2026 ©</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/questoes.js"></script>
+    <script src="./js/filtros.js"></script>
+    <script src="./js/navegacao.js"></script>
+    <script src="./js/estatisticas.js"></script>
+    <script src="./js/busca.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+.secao-carreiras {
+  max-width: 1300px;
+  margin: 20px auto;
+}
+
+.card-carreira {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.card-carreira img {
+  width: 100%;
+  display: block;
+}
+
+.carreira-texto {
+  padding: 15px;
+}
+
+.carreira-texto h2 {
+  color: #07559b;
+}

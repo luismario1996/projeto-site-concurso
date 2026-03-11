@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SoQuestões</title>
-    <link rel="shortcut icon" href="./img/logo (2).ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./img/focoazul.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/busca.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/questoes.css" />
+    <link rel="stylesheet" href="./css/estatisticas.css" />
 
     <!-- icones -->
     <link
@@ -24,20 +30,18 @@
         </div>
       </button>
 
-      <a href="index.html"
-        ><img src="./img/logo-branca200px.png" alt="so questões"
-      /></a>
+      <a href="index.html">
+        <img width="90px" src="./img/focoquestao200.png" alt="" />
+      </a>
+
+      <div class="barra-busca">
+        <input type="text" id="buscarQuestoes" placeholder="" />
+
+        <button onclick="buscarQuestoes()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </header>
-
-    <nav class="menu-categorias">
-      <a href="#">Português</a>
-
-      <a href="#">Direito</a>
-
-      <a href="#">Informática</a>
-
-      <a href="#">Geografia e História Do Amazonas</a>
-    </nav>
 
     <!-- MENU LATERAL -->
 
@@ -48,7 +52,7 @@
         </div>
 
         <a href="index.html"
-          ><img src="./img/logo-branca200px.png" alt="so questões"
+          ><img src="./img/focoquestao200.png" alt="so questões"
         /></a>
       </div>
 
@@ -274,26 +278,48 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <p>Siga nossas redes</p>
+    <footer class="site-footer">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img width="90px" src="./img/focoquestao200.png" alt="" />
+        </div>
+        <div class="redes">
+          <a href="https://instagram.com/seu_instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
 
-      <div class="redes">
-        <a href="https://instagram.com/seu_instagram" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
+          <a href="https://facebook.com/seu_facebook" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
 
-        <a href="https://facebook.com/seu_facebook" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
+          <a href="https://youtube.com/seu_canal" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <div class="barra-busca">
+          <input type="text" id="buscarQuestoes" placeholder="" />
 
-        <a href="https://youtube.com/seu_canal" target="_blank">
-          <i class="fab fa-youtube"></i>
-        </a>
+          <button onclick="buscarQuestoes()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
       </div>
 
-      <p class="copy">SoQuestões 2026 ©</p>
+      <div class="footer-right">
+        <h3>Sobre Nós</h3>
+        <p>
+          Somos um site focado em prática de questões de concursos público.<br />
+          Treino, Persistência, Foco e Resiliência são o que formam o futuro
+          servidor público.
+        </p>
+      </div>
     </footer>
 
+    <script src="./js/questoes.js"></script>
+    <script src="./js/filtros.js"></script>
+    <script src="./js/navegacao.js"></script>
+    <script src="./js/estatisticas.js"></script>
+    <script src="./js/busca.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

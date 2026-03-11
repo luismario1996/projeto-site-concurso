@@ -1,0 +1,18 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2c3e50;
+  margin: 0;
+}
+
+button:focus,
+button:active,
+a:focus,
+a:active {
+  outline: none;
+  box-shadow: none;
+}

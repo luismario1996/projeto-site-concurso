@@ -1,0 +1,63 @@
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 10px;
+  background: #4a6cf7;
+}
+
+.barra-busca {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.barra-busca input {
+  border: none;
+  outline: none;
+  padding: 10px 35px;
+  width: 260px;
+}
+
+.barra-busca button {
+  background: #4a6cf7;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+}
+
+.logo-barra-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.sobrenos {
+  text-align: justify;
+}
+@media (max-width: 700px) {
+  .barra-busca input {
+    width: 90px;
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    width: px;
+  }
+}
