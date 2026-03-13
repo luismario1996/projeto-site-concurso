@@ -11,9 +11,34 @@
   overflow-y: auto;
 }
 
+button.menu-btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.hamburger {
+  width: 24px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
 .menu-top {
   background: #4a6cf7;
-  color: white;
+  color: rgb(241, 229, 229);
   text-align: center;
   padding: 25px;
 }
