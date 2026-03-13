@@ -2,9 +2,9 @@
   "questoes": [
     {
       "id": 1,
-      "materia": "matematica",
-      "assunto": "montanhas",
-      "banca": "IBFC",
+      "materia": "PORTUGUÊS",
+      "assunto": "CRASE",
+      "banca": "FGV",
       "ano": 2024,
       "pergunta": "Qual frase está correta 2025?",
       "alternativas": {
@@ -18,10 +18,10 @@
 
     {
       "id": 2,
-      "materia": "português",
-      "assunto": "atomos",
-      "banca": "fgv",
-      "ano": 2022,
+      "materia": "GEOGRAFIA",
+      "assunto": "CRASE",
+      "banca": "CONSULPLAN",
+      "ano": 2025,
       "pergunta": "Assinale a frase correta. 2022",
       "alternativas": {
         "a": "Entreguei a carta a professora",
@@ -34,10 +34,10 @@
 
     {
       "id": 3,
-      "materia": "geografia",
-      "assunto": "montanhas",
+      "materia": "MATEMÁTICA",
+      "assunto": "CRASE",
       "banca": "IBFC",
-      "ano": 2024,
+      "ano": 2023,
       "pergunta": "Qual frase está correta 2025?",
       "alternativas": {
         "a": "Vou a escola",
@@ -50,9 +50,9 @@
 
     {
       "id": 4,
-      "materia": "fisica",
-      "assunto": "atomos",
-      "banca": "fgv",
+      "materia": "FÍSICA",
+      "assunto": "CRASE",
+      "banca": "CEBRASPE",
       "ano": 2022,
       "pergunta": "Assinale a frase correta. 2022",
       "alternativas": {
