@@ -7,7 +7,8 @@ function anterior() {
 
   respostaUsuario = null;
 
-  document.getElementById("resultado").innerText = "";
+  let res = document.querySelector(".resultado");
+  if (res) res.innerText = "";
 
   carregarQuestao();
 }
@@ -21,7 +22,8 @@ function proxima() {
 
   respostaUsuario = null;
 
-  document.getElementById("resultado").innerText = "";
+  let res = document.querySelector(".resultado");
+  if (res) res.innerText = "";
 
   carregarQuestao();
 }

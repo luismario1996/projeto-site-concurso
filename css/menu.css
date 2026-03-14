@@ -6,17 +6,16 @@
   height: 100%;
   background: white;
   box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
-  transition: left 0.35s;
+  transition: left 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
 }
 
 button.menu-btn {
   background-color: transparent;
-  border: 1px solid transparent;
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 .hamburger {
@@ -33,12 +32,11 @@ button.menu-btn {
   width: 100%;
   background: #ffffff;
   border-radius: 2px;
-  transition: 0.3s;
 }
 
 .menu-top {
   background: #4a6cf7;
-  color: rgb(241, 229, 229);
+  color: white;
   text-align: center;
   padding: 25px;
 }
@@ -58,14 +56,19 @@ button.menu-btn {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 12px;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.734);
-  font-weight: 100 bold;
-  font-size: 20px;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.menu-list a:hover,
+.submenu button:hover {
+  background: #f2f5ff;
 }
 
 .submenu-list {
@@ -73,7 +76,7 @@ button.menu-btn {
   overflow: hidden;
   list-style: none;
   transition: max-height 0.4s ease;
-  padding: 0px;
+  padding: 0;
 }
 
 .submenu.ativo .submenu-list {
@@ -99,6 +102,7 @@ button.menu-btn {
   display: none;
   z-index: 900;
 }
+
 .menu::-webkit-scrollbar {
   width: 6px;
 }

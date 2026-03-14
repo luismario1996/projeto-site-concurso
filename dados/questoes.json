@@ -6,62 +6,21 @@
       "assunto": "Interpretação de Texto",
       "banca": "FGV",
       "ano": 2024,
-      "pergunta": "Texto 1. Do Casamento. O casamento foi a maneira que a humanidade encontrou de propagar a espécie sem causar falatório na vizinhança. As tradições matrimoniais se transformaram através dos tempos e variam de cultura para cultura. Em certas sociedades primitivas o tempo gasto nas preliminares do casamento – corte, namoro, noivado etc. – era abreviado. O macho escolhia uma fêmea, batia com um tacape na sua cabeça e a arrastava para a sua caverna. Com o passar do tempo este método foi sendo abandonado, por pressão dos buffets, das lojas de presente e das mulheres, que não admitiam um período pré-conjugal tão curto. O homem precisava aproximar-se dela, cheirar seus cabelos, grunhir no seu ouvido, mordiscar a sua orelha e só então, quando ela estivesse distraída, bater com o tacape na sua cabeça e arrastá-la para a caverna.",
+
+      "texto": "O casamento foi a maneira que a humanidade encontrou de propagar a espécie sem causar falatório na vizinhança...",
+
+      "pergunta": "A estratégia humorística do texto consiste em:",
+
       "alternativas": {
         "a": "exagerar os dados fornecidos.",
         "b": "misturar momentos distantes do tempo.",
         "c": "utilizar um vocabulário ultrapassado.",
         "d": "descrever ações de forma grotesca."
       },
-      "correta": "b"
-    },
 
-    {
-      "id": 2,
-      "materia": "GEOGRAFIA",
-      "assunto": "CRASE",
-      "banca": "CONSULPLAN",
-      "ano": 2025,
-      "pergunta": "Assinale a frase correta. 2022",
-      "alternativas": {
-        "a": "Entreguei a carta a professora",
-        "b": "Entreguei a carta à professora",
-        "c": "Entreguei a carta à professora",
-        "d": "Entreguei à carta professora"
-      },
-      "correta": "b"
-    },
+      "correta": "b",
 
-    {
-      "id": 3,
-      "materia": "MATEMÁTICA",
-      "assunto": "CRASE",
-      "banca": "IBFC",
-      "ano": 2023,
-      "pergunta": "Qual frase está correta 2025?",
-      "alternativas": {
-        "a": "Vou a escola",
-        "b": "Vou à escola",
-        "c": "Vou à escola",
-        "d": "Vou a escola amanhã"
-      },
-      "correta": "b"
-    },
-
-    {
-      "id": 4,
-      "materia": "FÍSICA",
-      "assunto": "CRASE",
-      "banca": "CEBRASPE",
-      "ano": 2022,
-      "pergunta": "Assinale a frase correta. 2022",
-      "alternativas": {
-        "a": "Entreguei a carta a professora",
-        "b": "Entreguei a carta à professora",
-        "c": "Entreguei a carta à professora",
-        "d": "Entreguei à carta professora"
-      },
-      "correta": "b"
+      "explicacao": "O humor do texto está na mistura de momentos históricos muito distantes, criando um efeito inesperado e irônico."
     }
   ]
 }

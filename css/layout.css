@@ -1,36 +1,29 @@
 main {
-  margin-top: 10px;
-  padding: 20px;
-  margin: auto;
   max-width: 1300px;
+  margin: 10px auto;
+  padding: 20px;
 }
 
-.footer {
-  background: #4a6cf7;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-}
+.container {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 20px;
 
-.redes a {
-  color: white;
-  font-size: 24px;
-  margin: 0 10px;
-}
+  display: grid;
+  grid-template-columns: 260px 720px 220px;
+  gap: 30px;
 
+  justify-content: center;
+}
 body.menu-aberto {
   overflow: hidden;
 }
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-/* --- Footer Geral --- */
+
+/* --- Footer --- */
+
 .site-footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   background-color: #4a6cf7;
   color: #fff;
@@ -40,46 +33,29 @@ body.menu-aberto {
   font-family: Arial, sans-serif;
 }
 
-/* --- Logo --- */
 .footer-logo img {
   width: 150px;
   height: auto;
   margin-bottom: 20px;
 }
 
-/* --- Redes Sociais --- */
-.footer-socials a {
-  margin-right: 15px;
-  text-decoration: none;
+.redes a {
   color: #fff;
-  font-weight: bold;
+  font-size: 24px;
+  margin: 0 10px;
 }
 
-.footer-socials a:hover {
+.redes a:hover {
   color: #00aaff;
-}
-
-.footer-search button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: #00aaff;
-  color: #fff;
-  cursor: pointer;
-}
-
-.footer-search button:hover {
-  background-color: #0088cc;
 }
 
 .footer-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 20px;
 }
-/* --- Sobre Nós --- */
+
 .footer-right h3 {
   margin-bottom: 10px;
 }
@@ -93,7 +69,13 @@ body.menu-aberto {
   border-radius: 10px;
 }
 
+.painel-navegacao {
+  position: sticky;
+  top: 100px;
+}
+
 /* --- Responsividade --- */
+
 @media screen and (max-width: 768px) {
   .site-footer {
     flex-direction: column;
@@ -105,22 +87,26 @@ body.menu-aberto {
   .footer-right {
     max-width: 500px;
   }
-
-  .footer-socials a {
-    display: inline-block;
-    margin: 5px;
+}
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 1fr;
   }
 
-  .footer-search {
-    flex-direction: column;
-    width: 100%;
+  .painel-navegacao {
+    order: 3;
   }
 
-  .footer-search input {
-    width: 100%;
+  .painel-filtros {
+    order: 1;
   }
 
-  .footer-search button {
-    width: 100%;
+  .area-questao {
+    order: 2;
   }
 }

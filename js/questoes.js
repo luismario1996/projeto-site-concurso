@@ -17,7 +17,7 @@ let respostaUsuario = null;
 fetch("./dados/questoes.json")
   .then((res) => res.json())
   .then((data) => {
-    questoes = data.questoes;
+    questoes = data.questoes || data;
     questoesFiltradas = [...questoes];
 
     carregarFiltros();
@@ -49,8 +49,29 @@ function carregarQuestao() {
       `;
     }
 
+    let textoAssociado = "";
+
+    if (q.texto) {
+      textoAssociado = `
+  <div class="texto-associado-box">
+
+    <button class="texto-associado-btn" onclick="toggleTexto(this)">
+      Texto associado
+      <span class="texto-icon">+</span>
+    </button>
+
+    <div class="texto-associado-conteudo" style="display:none;">
+      <p>${q.texto}</p>
+    </div>
+
+  </div>
+  `;
+    }
+
     div.innerHTML = `
   <h3>Questão ${index + 1}</h3>
+
+  ${textoAssociado}
 
   <p>${q.pergunta}</p>
 
@@ -241,4 +262,18 @@ function enviarComentario(id) {
 
   toggleComentarios(id);
   toggleComentarios(id);
+}
+
+function toggleTexto(btn) {
+  const box = btn.parentElement;
+  const conteudo = box.querySelector(".texto-associado-conteudo");
+  const icon = btn.querySelector(".texto-icon");
+
+  if (conteudo.style.display === "block") {
+    conteudo.style.display = "none";
+    icon.textContent = "+";
+  } else {
+    conteudo.style.display = "block";
+    icon.textContent = "-";
+  }
 }

@@ -3,8 +3,8 @@
 }
 
 #graficoDesempenho {
-  max-width: 300px;
-  margin: 30px auto;
+  max-width: 250px;
+  margin: 20px auto;
 }
 
 .btn-numero {
@@ -14,6 +14,19 @@
   border-radius: 6px;
   background: #ecf0f3;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.btn-numero:hover {
+  background: #4a6cf7;
+  color: white;
+}
+
+.questao-atual {
+  background: #4a6cf7;
+  color: white;
 }
 
 .questao-acerto {
@@ -24,4 +37,8 @@
 .questao-erro {
   background: #e74c3c !important;
   color: white;
+}
+.painel-navegacao {
+  position: sticky;
+  top: 100px;
 }

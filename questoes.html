@@ -227,10 +227,8 @@
     <main>
       <div class="container">
         <!-- FILTROS -->
-        <section class="painel-filtros">
-          <h3>Filtrar Questões</h3>
-
-          <div class="grupo-filtros">
+        <div class="painel-filtros">
+          <div class="filtros-grid">
             <select id="filtroMateria">
               <option value="">Matéria</option>
             </select>
@@ -247,17 +245,19 @@
               <option value="">Ano</option>
             </select>
 
-            <select id="filtroRevisao" onchange="filtrarQuestoes()">
+            <select id="filtroRevisao">
               <option value="">Todas</option>
-              <option value="erro">Apenas erradas</option>
-              <option value="acerto">Apenas acertadas</option>
+              <option value="acerto">Acertos</option>
+              <option value="erro">Erros</option>
               <option value="nao">Não respondidas</option>
               <option value="favorita">Favoritas</option>
             </select>
 
-            <button onclick="filtrarQuestoes()">Aplicar Filtro</button>
+            <button class="btn-filtrar" onclick="filtrarQuestoes()">
+              Aplicar filtros
+            </button>
           </div>
-        </section>
+        </div>
 
         <!-- ÁREA DA QUESTÃO -->
         <section class="area-questao">
