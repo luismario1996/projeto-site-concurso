@@ -38,7 +38,17 @@ button.menu-btn {
   background: #4a6cf7;
   color: white;
   text-align: center;
-  padding: 25px;
+  padding: 28px 20px;
+
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.submenu-list a {
+  padding-left: 35px;
+  font-size: 14px;
+  color: #555;
 }
 
 .menu-list {
@@ -48,27 +58,32 @@ button.menu-btn {
 }
 
 .menu-list li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .menu-list a,
 .submenu button {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
-  text-decoration: none;
-  color: #000;
+  gap: 12px;
+  padding: 12px 18px;
+
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
+
+  text-decoration: none;
+  color: #2c3e50;
+
   background: none;
   border: none;
   cursor: pointer;
+
+  transition: background 0.2s;
 }
 
 .menu-list a:hover,
 .submenu button:hover {
-  background: #f2f5ff;
+  background: #f3f6ff;
 }
 
 .submenu-list {

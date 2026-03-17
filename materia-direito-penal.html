@@ -86,7 +86,9 @@
                 >Geografia e História de Manaus</a
               >
             </li>
-            <li><a href="materia-direito-humanos.html">Direitos Humanos</a></li>
+            <li>
+              <a href="materia-direito-humanos.html">Direitos Humanos</a>
+            </li>
             <li>
               <a href="materia-direito-administrativo.html"
                 >Direito Administrativo</a
@@ -116,51 +118,20 @@
     <div id="overlay" onclick="toggleMenu()"></div>
 
     <main>
-      <div class="container">
-        <!-- FILTROS -->
-        <div class="painel-filtros">
-          <div class="filtros-grid">
-            <select id="filtroMateria">
-              <option value="">Matéria</option>
-            </select>
+      <h1>Direito Penal para Concursos</h1>
 
-            <select id="filtroAssunto">
-              <option value="">Assunto</option>
-            </select>
+      <div class="lista-conteudos">
+        <a href="questoes.html?assunto=Interpretação de Texto">
+          Interpretação de Texto
+        </a>
 
-            <select id="filtroBanca">
-              <option value="">Banca</option>
-            </select>
+        <a href="questoes.html?assunto=Ortografia"> Ortografia </a>
 
-            <select id="filtroAno">
-              <option value="">Ano</option>
-            </select>
+        <a href="questoes.html?assunto=Acentuação"> Acentuação </a>
 
-            <select id="filtroRevisao">
-              <option value="">Todas</option>
-              <option value="acerto">Acertos</option>
-              <option value="erro">Erros</option>
-              <option value="nao">Não respondidas</option>
-              <option value="favorita">Favoritas</option>
-            </select>
+        <a href="questoes.html?assunto=Concordância"> Concordância </a>
 
-            <button class="btn-filtrar" onclick="filtrarQuestoes()">
-              Aplicar filtros
-            </button>
-          </div>
-        </div>
-
-        <!-- ÁREA DA QUESTÃO -->
-        <section class="area-questao">
-          <div id="listaQuestoes"></div>
-        </section>
-
-        <!-- NAVEGAÇÃO RÁPIDA -->
-        <section class="painel-navegacao">
-          <h3>Navegação rápida</h3>
-
-          <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
-        </section>
+        <a href="questoes.html?assunto=Pontuação"> Pontuação </a>
       </div>
     </main>
 
@@ -200,7 +171,6 @@
         </p>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/questoes.js"></script>
     <script src="./js/filtros.js"></script>
     <script src="./js/navegacao.js"></script>

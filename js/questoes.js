@@ -11,6 +11,9 @@ let estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {
 let questoes = [];
 let questoesFiltradas = [];
 
+const params = new URLSearchParams(window.location.search);
+const assuntoURL = params.get("assunto");
+
 let atual = 0;
 let respostaUsuario = null;
 
@@ -18,7 +21,14 @@ fetch("./dados/questoes.json")
   .then((res) => res.json())
   .then((data) => {
     questoes = data.questoes || data;
-    questoesFiltradas = [...questoes];
+
+    if (assuntoURL) {
+      questoesFiltradas = questoes.filter(
+        (q) => q.assunto.toLowerCase() === assuntoURL.toLowerCase(),
+      );
+    } else {
+      questoesFiltradas = [...questoes];
+    }
 
     carregarFiltros();
     criarNavegacao();
