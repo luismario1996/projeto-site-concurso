@@ -9,12 +9,38 @@
   border-radius: 20px;
 }
 
-.container-portugues {
+.conteudo-fonologia {
   margin: auto;
-  max-width: 800px;
+  max-width: 1350px;
   background-color: rgba(0, 0, 0, 0.004);
   border: 1px solid rgba(0, 0, 0, 0.142);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   border-radius: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.efeito:hover {
+  text-decoration: underline rgba(0, 0, 0, 0.272);
+}
+.formatacao-portugues {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.716);
+}
+
+.card-generico {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.169);
+  padding: 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
 }
