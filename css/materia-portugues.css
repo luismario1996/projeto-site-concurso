@@ -9,15 +9,7 @@
   border-radius: 20px;
 }
 
-.conteudo-fonologia {
-  margin: auto;
-  max-width: 1350px;
-  background-color: rgba(0, 0, 0, 0.004);
-  border: 1px solid rgba(0, 0, 0, 0.142);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  border-radius: 20px;
-}
+
 
 ul {
   list-style: none;
@@ -27,20 +19,84 @@ li {
   padding: 10px;
   margin-bottom: 10px;
 }
-.efeito:hover {
-  text-decoration: underline rgba(0, 0, 0, 0.272);
-}
+
 .formatacao-portugues {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.716);
 }
 
-.card-generico {
-  display: flex;
-  flex-direction: column;
+
+.efeito {
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.efeito:hover {
+  background: #f0f4ff;
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.conteudo-fonologia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.169);
+  margin-top: 30px;
+}
+
+.card-generico {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card-generico:hover {
+  transform: translateY(-5px);
+}
+
+
+.titulo h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.sub-titulo h3 {
+  color: #666;
+  font-weight: 400;
+}
+
+
+.caixa {border: 1px solid rgba(0, 0, 0, 0.243);
   padding: 20px;
   border-radius: 30px;
+  margin-top: 20px;
+  text-align: justify;
+  max-width: 900px;
   margin-bottom: 20px;
+}
+
+span {font-weight: bolder;}
+
+.h1-formatacao{
+
+border: 1px solid rgba(0, 0, 0, 0.113);
+padding: 40px;
+border-radius: 30px;
+margin-top: 20px;
+
+
+ 
+}
+
+.aviso {
+  font-weight: bolder;
+  max-width: 120px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 20px;
+
 }
