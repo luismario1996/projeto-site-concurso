@@ -1,9 +1,11 @@
+
+body { background-color: rgba(255, 255, 255, 0.972);}
+
 .titulo-sub-titulo {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.004);
-  border: 1px solid rgba(0, 0, 0, 0.142);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.972);
+  border: 1px solid rgba(0, 0, 0, 0.135);
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
@@ -18,11 +20,14 @@ ul {
 li {
   padding: 10px;
   margin-bottom: 10px;
+ 
 }
 
 .formatacao-portugues {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.716);
+  
+   
 }
 
 
@@ -31,6 +36,9 @@ li {
   padding: 10px;
   border-radius: 6px;
   transition: 0.2s;
+ background-color: rgba(255, 255, 255, 0.972);
+
+
 }
 
 .efeito:hover {
@@ -44,39 +52,44 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-top: 30px;
+   background-color: rgba(255, 255, 255, 0.972);
 }
 
 .card-generico {
-  background: white;
+   background-color: rgba(255, 255, 255, 0.972);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.135);
   transition: 0.3s;
 }
 
 .card-generico:hover {
   transform: translateY(-5px);
+
 }
 
 
 .titulo h1 {
   font-size: 32px;
   font-weight: 700;
+   background-color: rgba(255, 255, 255, 0.972);
 }
 
 .sub-titulo h3 {
   color: #666;
   font-weight: 400;
+   background-color: rgba(255, 255, 255, 0.972);
 }
 
 
-.caixa {border: 1px solid rgba(0, 0, 0, 0.243);
+.caixa { border: 1px solid rgba(0, 0, 0, 0.135);
   padding: 20px;
   border-radius: 30px;
   margin-top: 20px;
   text-align: justify;
   max-width: 900px;
   margin-bottom: 20px;
+   background-color: rgba(255, 255, 255, 0.972);
 }
 
 span {font-weight: bolder;}
@@ -84,11 +97,12 @@ span {font-weight: bolder;}
 .h1-formatacao{
 
 border: 1px solid rgba(0, 0, 0, 0.113);
-padding: 40px;
+padding: 20px;
 border-radius: 30px;
 margin-top: 20px;
-
-
+background-color: rgba(239, 0, 0, 0.004);
+ border: 1px solid rgba(0, 0, 0, 0.135);
+ background-color: rgba(255, 255, 255, 0.972);
  
 }
 
@@ -98,5 +112,58 @@ margin-top: 20px;
   border-radius: 30px;
   text-align: center;
   margin-top: 20px;
+   
 
+}
+
+
+
+.toggle-conteudo {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.conteudo-escondido {
+  display: none;
+}
+
+.conteudo-escondido.ativo {
+  display: block;
+}
+
+.toggle-principal {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.toggle-principal:hover {
+  color: #2c7be5;
+}
+
+.icon-principal {
+  font-size: 24px;
+}
+
+/* escondido */
+.conteudo-principal {
+  display: none;
+  margin-top: 15px;
 }

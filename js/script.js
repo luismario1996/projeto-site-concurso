@@ -33,3 +33,37 @@ function toggleSubmenu(botao) {
 
   item.classList.toggle("ativo");
 }
+
+function toggleConteudo(botao) {
+  const conteudo = botao.nextElementSibling;
+  const icon = botao.querySelector(".icon");
+
+  conteudo.classList.toggle("ativo");
+
+  if (conteudo.classList.contains("ativo")) {
+    icon.textContent = "-";
+  } else {
+    icon.textContent = "+";
+  }
+}
+
+
+
+
+
+
+
+function togglePrincipal(botao) {
+  const conteudo = botao.nextElementSibling;
+  const icon = botao.querySelector(".icon-principal");
+
+  if (conteudo.style.display === "block") {
+    conteudo.style.display = "none";
+    icon.textContent = "+";
+  } else {
+    conteudo.style.display = "block";
+    icon.textContent = "-";
+  }
+}
+
+
