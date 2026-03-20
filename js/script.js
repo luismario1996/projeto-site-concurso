@@ -35,45 +35,56 @@ function toggleSubmenu(botao) {
 }
 
 function toggleConteudo(botao) {
+  const cardAtual = botao.parentElement; // .card-generico
   const conteudoAtual = botao.nextElementSibling;
   const iconAtual = botao.querySelector(".icon");
 
-  const todosConteudos = document.querySelectorAll(".conteudo-escondido");
-  const todosBotoes = document.querySelectorAll(".toggle-conteudo");
+  // pega somente os cards dentro da mesma matéria
+  const blocoAtual = botao.closest(".conteudo-principal");
+  const todosCards = blocoAtual.querySelectorAll(".card-generico");
 
-  // fecha todos os outros
-  todosConteudos.forEach((conteudo, index) => {
-    if (conteudo !== conteudoAtual) {
+  todosCards.forEach((card) => {
+    const conteudo = card.querySelector(".conteudo-escondido");
+    const btn = card.querySelector(".toggle-conteudo");
+    const icon = btn.querySelector(".icon");
+
+    if (card !== cardAtual) {
       conteudo.classList.remove("ativo");
-      todosBotoes[index].querySelector(".icon").textContent = "+";
+      icon.textContent = "+";
     }
   });
 
-  // alterna o atual
+  // abre ou fecha o atual
   conteudoAtual.classList.toggle("ativo");
 
-  if (conteudoAtual.classList.contains("ativo")) {
-    iconAtual.textContent = "-";
-  } else {
-    iconAtual.textContent = "+";
-  }
+  iconAtual.textContent = conteudoAtual.classList.contains("ativo")
+    ? "-"
+    : "+";
 }
-
-
 
 
 
 function togglePrincipal(botao) {
-  const conteudo = botao.nextElementSibling;
-  const icon = botao.querySelector(".icon-principal");
+  const blocoAtual = botao.parentElement; // .h1-formatacao
+  const conteudoAtual = botao.nextElementSibling;
+  const iconAtual = botao.querySelector(".icon-principal");
 
-  if (conteudo.style.display === "block") {
-    conteudo.style.display = "none";
-    icon.textContent = "+";
-  } else {
-    conteudo.style.display = "block";
-    icon.textContent = "-";
-  }
+  const todosBlocos = document.querySelectorAll(".h1-formatacao");
+
+  todosBlocos.forEach((bloco) => {
+    const conteudo = bloco.querySelector(".conteudo-principal");
+    const btn = bloco.querySelector(".toggle-principal");
+    const icon = btn.querySelector(".icon-principal");
+
+    if (bloco !== blocoAtual) {
+      conteudo.classList.remove("ativo");
+      icon.textContent = "+";
+    }
+  });
+
+  conteudoAtual.classList.toggle("ativo");
+
+  iconAtual.textContent = conteudoAtual.classList.contains("ativo")
+    ? "-"
+    : "+";
 }
-
-

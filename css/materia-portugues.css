@@ -177,3 +177,22 @@ background-color: rgba(239, 0, 0, 0.004);
 .conteudo-escondido.ativo {
   display: block;
 }
+
+
+.conteudo-principal {
+  display: none;
+}
+
+.conteudo-principal.ativo {
+  display: block;
+}
+
+.conteudo-escondido {
+  display: none;
+}
+
+.conteudo-escondido.ativo {
+  display: block;
+}
+
+
