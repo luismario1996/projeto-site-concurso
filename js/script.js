@@ -35,19 +35,29 @@ function toggleSubmenu(botao) {
 }
 
 function toggleConteudo(botao) {
-  const conteudo = botao.nextElementSibling;
-  const icon = botao.querySelector(".icon");
+  const conteudoAtual = botao.nextElementSibling;
+  const iconAtual = botao.querySelector(".icon");
 
-  conteudo.classList.toggle("ativo");
+  const todosConteudos = document.querySelectorAll(".conteudo-escondido");
+  const todosBotoes = document.querySelectorAll(".toggle-conteudo");
 
-  if (conteudo.classList.contains("ativo")) {
-    icon.textContent = "-";
+  // fecha todos os outros
+  todosConteudos.forEach((conteudo, index) => {
+    if (conteudo !== conteudoAtual) {
+      conteudo.classList.remove("ativo");
+      todosBotoes[index].querySelector(".icon").textContent = "+";
+    }
+  });
+
+  // alterna o atual
+  conteudoAtual.classList.toggle("ativo");
+
+  if (conteudoAtual.classList.contains("ativo")) {
+    iconAtual.textContent = "-";
   } else {
-    icon.textContent = "+";
+    iconAtual.textContent = "+";
   }
 }
-
-
 
 
 

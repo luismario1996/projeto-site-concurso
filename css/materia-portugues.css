@@ -167,3 +167,13 @@ background-color: rgba(239, 0, 0, 0.004);
   display: none;
   margin-top: 15px;
 }
+
+
+
+.conteudo-escondido {
+  display: none;
+}
+
+.conteudo-escondido.ativo {
+  display: block;
+}
