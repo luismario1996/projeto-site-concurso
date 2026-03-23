@@ -1,58 +1,46 @@
-.topo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 5px 10px;
-  background: #4a6cf7;
-}
+/* =========================
+   BARRA DE BUSCA
+========================= */
 
 .barra-busca {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  background: white;
+  background: #fff;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
 }
 
+.barra-busca:focus-within {
+  box-shadow: 0 0 0 2px #4a6cf7;
+}
+
+/* INPUT */
 .barra-busca input {
   border: none;
   outline: none;
   padding: 10px 15px;
   width: 260px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
 
+/* BOTÃO */
 .barra-busca button {
   background: #4a6cf7;
   border: none;
-  color: white;
+  color: #fff;
   padding: 10px 15px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
+.barra-busca button:hover {
+  background: #3b5be0;
 }
 
-footer a {
-  text-decoration: none;
-}
-
-.logo-barra-social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.sobrenos {
-  text-align: justify;
-}
-
+/* RESPONSIVO */
 @media (max-width: 700px) {
   .barra-busca input {
     width: 150px;

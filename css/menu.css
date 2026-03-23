@@ -1,23 +1,29 @@
+/* =========================
+   MENU LATERAL
+========================= */
 .menu {
   position: fixed;
   top: 0;
   left: -280px;
   width: 280px;
   height: 100%;
-  background: white;
-  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
   transition: left 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
 }
 
+/* =========================
+   BOTÃO HAMBURGUER
+========================= */
 button.menu-btn {
-  background-color: transparent;
+  background: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
+  cursor: pointer;
 }
 
+/* HAMBURGUER */
 .hamburger {
   width: 24px;
   height: 18px;
@@ -26,31 +32,46 @@ button.menu-btn {
   justify-content: space-between;
 }
 
+/* 🔥 CORRIGIDO: agora funciona em fundo branco */
 .hamburger span {
   display: block;
   height: 3px;
   width: 100%;
-  background: #ffffff;
+  background: #222;
   border-radius: 2px;
+  transition: 0.3s;
 }
 
+/* ANIMAÇÃO (X) */
+.hamburger.ativo span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.ativo span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =========================
+   TOPO DO MENU
+========================= */
 .menu-top {
   background: #4a6cf7;
   color: white;
   text-align: center;
-  padding: 28px 20px;
+  padding: 30px 20px;
 
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-.submenu-list a {
-  padding-left: 35px;
-  font-size: 14px;
-  color: #555;
-}
-
+/* =========================
+   LISTA
+========================= */
 .menu-list {
   list-style: none;
   padding: 0;
@@ -61,12 +82,13 @@ button.menu-btn {
   border-bottom: 1px solid #f0f0f0;
 }
 
+/* LINKS E BOTÕES */
 .menu-list a,
 .submenu button {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 18px;
+  padding: 14px 18px;
 
   font-size: 15px;
   font-weight: 500;
@@ -78,14 +100,18 @@ button.menu-btn {
   border: none;
   cursor: pointer;
 
-  transition: background 0.2s;
+  transition: 0.2s;
 }
 
+/* HOVER */
 .menu-list a:hover,
 .submenu button:hover {
   background: #f3f6ff;
 }
 
+/* =========================
+   SUBMENU
+========================= */
 .submenu-list {
   max-height: 0;
   overflow: hidden;
@@ -94,10 +120,19 @@ button.menu-btn {
   padding: 0;
 }
 
+/* SUBMENU ABERTO */
 .submenu.ativo .submenu-list {
   max-height: 600px;
 }
 
+/* ITENS DO SUBMENU */
+.submenu-list a {
+  padding-left: 35px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* SETA */
 .seta {
   margin-left: auto;
   transition: transform 0.3s ease;
@@ -107,6 +142,9 @@ button.menu-btn {
   transform: rotate(180deg);
 }
 
+/* =========================
+   OVERLAY
+========================= */
 #overlay {
   position: fixed;
   top: 0;
@@ -118,6 +156,9 @@ button.menu-btn {
   z-index: 900;
 }
 
+/* =========================
+   SCROLL PERSONALIZADO
+========================= */
 .menu::-webkit-scrollbar {
   width: 6px;
 }
