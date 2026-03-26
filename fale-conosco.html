@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/estatisticas.css" />
     <link rel="stylesheet" href="./css/layout-page-generico.css">
     <link rel="stylesheet" href="./css/concursos.css">
+    <link rel="stylesheet" href="./css/fale-conosco.css">
 
     <!-- icones -->
     <link
@@ -57,7 +58,7 @@
          <li><a href="#">Material de apoio</a></li>
          <li><a href="#">Favoritas</a></li>
          <li><a href="#">Estatisticas</a></li>
-         <li><a href="./fale-conosco.html">Fale Conosco</a></li>
+         <li><a href="#">Fale Conosco</a></li>
      
 
 
@@ -152,72 +153,39 @@
 
     <div id="overlay" onclick="toggleMenu()"></div>
 
-    <main>
+<main>
+  <div class="container-contato">
 
-      <div class="container-main">
+    <h2>Fale Conosco</h2>
+    <p class="subtitulo">Tem alguma dúvida ou sugestão? Envie uma mensagem 👇</p>
+
+    <form action="https://formsubmit.co/luisfernandes199625@gmail.com" method="POST">
+
+      <div class="grupo-input">
+        <label>Nome</label>
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+      </div>
+
+      <div class="grupo-input">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Digite seu email" required>
+      </div>
+
+      <div class="grupo-input">
+        <label>Mensagem</label>
+        <textarea name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+      </div>
+
+      <button type="submit">Enviar mensagem</button>
+
+      <input type="hidden" name="_captcha" value="false">
+
+    </form>
+
+  </div>
+</main>
 
 
-
- <!-- SEÇÕES DE CARREIRAS -->
-
-      <section class="secao-carreiras">
-        <!-- CARREIRAS POLICIAIS -->
-
-        <div class="card-carreira">
-          <div class="carreira-texto">
-            <h2>Polícia Federal</h2>
-            <a href="questoes.html"
-              ><img src="img/policiafederal.png" alt="Carreiras Policiais"
-            /></a>
-            <h3>Seja um Policial Federal</h3>
-
-            Prepare-se para as principais forças de segurança do país com o
-            <strong>FocoQuestão</strong>: na
-            <strong>Polícia Federal (PF)</strong>, você focará em investigação
-            criminal e repressão a crimes federais.
-          </div>
-
-          <!-- CARREIRAS DA SAÚDE -->
-
-          <div class="card-carreira">
-            <div class="carreira-texto">
-              <h2>Polícia Rodoviária Federal</h2>
-              <a href="index.html"
-                ><img src="img/policiarodoviaria.png" alt="Carreiras da Saúde"
-              /></a>
-              <h3>Seja um Policial Rodoviário Federal</h3>
-
-              <p>
-                <strong>Polícia Rodoviária Federal (PRF)</strong>, o objetivo é
-                o patrulhamento ostensivo e a garantia da segurança viária em
-                nossas rodovias.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- CARREIRAS JURÍDICAS -->
-
-        <div class="card-carreira">
-          <div class="carreira-texto">
-            <h2>Polícia Militar</h2>
-            <a href="index.html"
-              ><img src="./img/policiamilitar.png" alt="Carreiras Jurídicas"
-            /></a>
-            <h3>Seja Policial Militar</h3>
-
-            <p>
-              <strong>Polícia Militar do Amazonas (PM-AM)</strong>, sua missão
-              será a preservação da ordem pública e o policiamento ostensivo em
-              todo o estado. Cada carreira exige uma preparação específica e
-              profunda, e nós oferecemos as ferramentas necessárias para você
-              conquistar a sua vaga.
-            </p>
-          </div>
-        </div>
-      </section>
-     </div>
-    </main>
 
     <footer class="site-footer">
       <div class="footer-left">
