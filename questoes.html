@@ -144,56 +144,58 @@
     </nav>
 
     <div id="overlay" onclick="toggleMenu()"></div>
+<main>
+  <div class="container">
 
-    <main>
-       <div class="container">
-        <!-- FILTROS -->
-        <div class="painel-filtros">
-          <div class="filtros-grid">
-            <select id="filtroMateria">
-              <option value="">Matéria</option>
-            </select>
+    <!-- FILTROS -->
+    <div class="painel-filtros">
+      <div class="filtros-grid">
+        <select id="filtroMateria">
+          <option value="">Matéria</option>
+        </select>
 
-            <select id="filtroAssunto">
-              <option value="">Assunto</option>
-            </select>
+        <select id="filtroAssunto">
+          <option value="">Assunto</option>
+        </select>
 
-            <select id="filtroBanca">
-              <option value="">Banca</option>
-            </select>
+        <select id="filtroBanca">
+          <option value="">Banca</option>
+        </select>
 
-            <select id="filtroAno">
-              <option value="">Ano</option>
-            </select>
+        <select id="filtroAno">
+          <option value="">Ano</option>
+        </select>
 
-            <select id="filtroRevisao">
-              <option value="">Todas</option>
-              <option value="acerto">Acertos</option>
-              <option value="erro">Erros</option>
-              <option value="nao">Não respondidas</option>
-              <option value="favorita">Favoritas</option>
-            </select>
+        <select id="filtroRevisao">
+          <option value="">Todas</option>
+          <option value="acerto">Acertos</option>
+          <option value="erro">Erros</option>
+          <option value="nao">Não respondidas</option>
+          <option value="favorita">Favoritas</option>
+        </select>
 
-            <button class="btn-filtrar" onclick="filtrarQuestoes()">
-              Aplicar filtros
-            </button>
-          </div>
-        </div>
-
-        <!-- ÁREA DA QUESTÃO -->
-        <section class="area-questao">
-          <div id="listaQuestoes"></div>
-        </section>
-
-        <!-- NAVEGAÇÃO RÁPIDA -->
-        <section class="painel-navegacao">
-          <h3>Navegação rápida</h3>
-
-          <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
-        </section>
+        <button class="btn-filtrar" onclick="filtrarQuestoes()">
+          Aplicar filtros
+        </button>
       </div>
+    </div>
 
-    </main>
+    <!-- QUESTÕES -->
+    <section class="area-questao">
+      <div id="listaQuestoes"></div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section class="painel-navegacao">
+      <h3>Navegação rápida</h3>
+      <div id="navegacaoQuestoes" class="navegacao-questoes"></div>
+    </section>
+
+
+
+  </div>
+</main>
+
 
     <footer class="site-footer">
       <div class="footer-left">

@@ -13,12 +13,8 @@
    HEADER
 ========================= */
 .topo-desktop {
-  position: sticky;
-  top: 0;
+  position: relative; /* ou pode remover completamente */
   z-index: 1000;
-  background: #fff;
-  border-bottom: 1px solid var(--cor-borda);
-  padding: 0px 0;
 }
 
 * a {text-decoration: none;}
@@ -119,9 +115,26 @@
    MAIN
 ========================= */
 main {
-  max-width: 1200px;
-  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 20px;
+}
+
+.container-main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+
+.secao-carreiras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 /* CONTAINER (QUESTÕES / LAYOUT GERAL) */
@@ -234,6 +247,7 @@ body.menu-aberto {
 .menu-scroll {
   overflow-x: auto;
   flex: 1;
+
 }
 
 /* ESCONDE SCROLL */
@@ -244,9 +258,11 @@ body.menu-aberto {
 /* MENU */
 .menu-links {
   display: flex;
+
   gap: 20px;
   list-style: none;
   white-space: nowrap;
+
 }
 
 /* CADA ITEM NÃO QUEBRA */
@@ -328,7 +344,28 @@ body.menu-aberto {
   .linha-menu::-webkit-scrollbar {
     display: none;
   }
+
+
+
+
 }
+
+
+
+@media (max-width: 768px) {
+  .secao-carreiras {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .container-main {
+    padding: 15px;
+  }
+}
+
 
 
 
