@@ -1,6 +1,7 @@
 /* =========================
    MENU LATERAL
 ========================= */
+
 .menu {
   position: fixed;
   top: 0;
@@ -12,18 +13,26 @@
   transition: left 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
+
+  will-change: left;
 }
+
+/* MENU ABERTO */
+.menu.ativo {
+  left: 0;
+}
+
 
 /* =========================
    BOTÃO HAMBURGUER
 ========================= */
+
 button.menu-btn {
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-/* HAMBURGUER */
 .hamburger {
   width: 24px;
   height: 18px;
@@ -32,7 +41,6 @@ button.menu-btn {
   justify-content: space-between;
 }
 
-/* 🔥 CORRIGIDO: agora funciona em fundo branco */
 .hamburger span {
   display: block;
   height: 3px;
@@ -42,7 +50,7 @@ button.menu-btn {
   transition: 0.3s;
 }
 
-/* ANIMAÇÃO (X) */
+/* ANIMAÇÃO */
 .hamburger.ativo span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -55,23 +63,27 @@ button.menu-btn {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+
 /* =========================
    TOPO DO MENU
 ========================= */
+
 .menu-top {
   background: #4a6cf7;
   color: white;
   text-align: center;
   padding: 30px 20px;
-
+ 
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
+
 /* =========================
    LISTA
 ========================= */
+
 .menu-list {
   list-style: none;
   padding: 0;
@@ -82,7 +94,9 @@ button.menu-btn {
   border-bottom: 1px solid #f0f0f0;
 }
 
+
 /* LINKS E BOTÕES */
+
 .menu-list a,
 .submenu button {
   display: flex;
@@ -104,14 +118,17 @@ button.menu-btn {
 }
 
 /* HOVER */
+
 .menu-list a:hover,
 .submenu button:hover {
   background: #f3f6ff;
 }
 
+
 /* =========================
    SUBMENU
 ========================= */
+
 .submenu-list {
   max-height: 0;
   overflow: hidden;
@@ -120,19 +137,19 @@ button.menu-btn {
   padding: 0;
 }
 
-/* SUBMENU ABERTO */
 .submenu.ativo .submenu-list {
   max-height: 600px;
 }
 
-/* ITENS DO SUBMENU */
 .submenu-list a {
   padding-left: 35px;
   font-size: 14px;
   color: #555;
 }
 
+
 /* SETA */
+
 .seta {
   margin-left: auto;
   transition: transform 0.3s ease;
@@ -142,9 +159,11 @@ button.menu-btn {
   transform: rotate(180deg);
 }
 
+
 /* =========================
    OVERLAY
 ========================= */
+
 #overlay {
   position: fixed;
   top: 0;
@@ -156,9 +175,15 @@ button.menu-btn {
   z-index: 900;
 }
 
+#overlay.ativo {
+  display: block;
+}
+
+
 /* =========================
-   SCROLL PERSONALIZADO
+   SCROLL
 ========================= */
+
 .menu::-webkit-scrollbar {
   width: 6px;
 }
