@@ -23,12 +23,12 @@ width: 100%;}
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  gap: 20px;
+
 }
 /* ORGANIZA TUDO EM COLUNA */
 .h1-formatacao {
   display: block;
-  margin-bottom: 20px;
+
 }
 
 /* CONTEÚDO INTERNO */
