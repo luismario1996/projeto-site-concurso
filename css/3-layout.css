@@ -1,3 +1,29 @@
+html, body {
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
+body {
+  position: relative;
+  overscroll-behavior-x: none;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.menu-scroll {
+  overflow-x: hidden;
+}
+
+
 /* =========================
    VARIÁVEIS GLOBAIS
 ========================= */
@@ -64,7 +90,7 @@ width: 100%;}
 .linha-menu {
   max-width: 1200px;
   margin:auto;
-  padding: 20px;
+  padding: 40px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -85,10 +111,6 @@ width: 100%;}
  
 
 }
-
-
-
-
 
 
 /* ESCONDE SCROLL */
@@ -213,10 +235,8 @@ body.menu-aberto {
 
 @media (max-width: 768px) {
   .linha-menu {
-    padding: 10px; /* antes era 40px → causava overflow */
+    gap: 10px;
   }
-}
-
 
   .menu-links {
     gap: 10px;
