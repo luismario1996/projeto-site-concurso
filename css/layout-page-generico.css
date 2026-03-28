@@ -3,6 +3,19 @@ body {
   background: #f5f7fb;
 }
 
+.logo-topo img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+.imagem-site {
+
+display: flex;
+justify-content: flex-start;
+ max-width: 1200px;
+width: 100%;}
+
+
 .container-conteudo {
   display: flex;
   flex-direction: column;
