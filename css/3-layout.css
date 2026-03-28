@@ -62,10 +62,9 @@ width: 100%;}
 ========================= */
 
 .linha-menu {
-  display: block;
   max-width: 1200px;
   margin:auto;
-  padding: 40px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -86,6 +85,10 @@ width: 100%;}
  
 
 }
+
+
+
+
 
 
 /* ESCONDE SCROLL */
@@ -210,8 +213,10 @@ body.menu-aberto {
 
 @media (max-width: 768px) {
   .linha-menu {
-    gap: 10px;
+    padding: 10px; /* antes era 40px → causava overflow */
   }
+}
+
 
   .menu-links {
     gap: 10px;
